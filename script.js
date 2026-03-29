@@ -1,122 +1,99 @@
 /* ============================================
-   APEX MOVERS — JavaScript
+   WEBCRAFT STUDIO — JS
    ============================================ */
 
-// ── Nav scroll effect ──────────────────────────────
+// ── Nav scroll ────────────────────────────────
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 40);
 }, { passive: true });
 
-// ── Mobile menu ────────────────────────────────────
+// ── Mobile menu ───────────────────────────────
 const burger = document.getElementById('burger');
 const mobileMenu = document.getElementById('mobileMenu');
-
-burger.addEventListener('click', () => {
-  mobileMenu.classList.toggle('open');
-  const isOpen = mobileMenu.classList.contains('open');
-  burger.setAttribute('aria-expanded', isOpen);
-});
-
-// Close mobile menu on link click
-document.querySelectorAll('.nav__mobile-link, .nav__mobile .btn').forEach(link => {
-  link.addEventListener('click', () => {
-    mobileMenu.classList.remove('open');
-  });
-});
-
-// ── Reveal on scroll ───────────────────────────────
-const revealObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+burger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+document.querySelectorAll('.nav__mobile-link, .nav__mobile .btn').forEach(el =>
+  el.addEventListener('click', () => mobileMenu.classList.remove('open'))
 );
 
-document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+// ── Reveal on scroll ──────────────────────────
+const revealObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
-// ── Counter animation ──────────────────────────────
-function animateCounter(el, target, duration = 1800) {
+// ── Counter animation ─────────────────────────
+function animateCounter(el, target, dur = 1600) {
   const start = performance.now();
-  const isLarge = target >= 1000;
-
-  function update(now) {
-    const elapsed = now - start;
-    const progress = Math.min(elapsed / duration, 1);
-    // Ease out cubic
-    const eased = 1 - Math.pow(1 - progress, 3);
-    const current = Math.floor(eased * target);
-    el.textContent = isLarge ? current.toLocaleString() : current;
-    if (progress < 1) requestAnimationFrame(update);
-    else el.textContent = isLarge ? target.toLocaleString() : target;
-  }
+  const update = now => {
+    const p = Math.min((now - start) / dur, 1);
+    const eased = 1 - Math.pow(1 - p, 3);
+    el.textContent = target >= 100 ? Math.floor(eased * target).toLocaleString() : Math.floor(eased * target);
+    if (p < 1) requestAnimationFrame(update);
+    else el.textContent = target >= 100 ? target.toLocaleString() : target;
+  };
   requestAnimationFrame(update);
 }
-
-const statsObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.querySelectorAll('.stat__num[data-target]').forEach(num => {
-          const target = parseInt(num.getAttribute('data-target'), 10);
-          animateCounter(num, target);
-          num.removeAttribute('data-target');
-        });
-        statsObserver.unobserve(entry.target);
-      }
+const statsObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.querySelectorAll('.stat__num[data-target]').forEach(el => {
+      animateCounter(el, parseInt(el.dataset.target, 10));
+      el.removeAttribute('data-target');
     });
-  },
-  { threshold: 0.5 }
-);
-
+    statsObs.unobserve(e.target);
+  });
+}, { threshold: 0.5 });
 const heroStats = document.querySelector('.hero__stats');
-if (heroStats) statsObserver.observe(heroStats);
+if (heroStats) statsObs.observe(heroStats);
 
-// ── Smooth scroll for anchor links ────────────────
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', (e) => {
-    const href = link.getAttribute('href');
-    if (href === '#') return;
-    const target = document.querySelector(href);
-    if (!target) return;
+// ── Smooth scroll ─────────────────────────────
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const id = a.getAttribute('href');
+    if (id === '#') return;
+    const el = document.querySelector(id);
+    if (!el) return;
     e.preventDefault();
-    const navH = nav.offsetHeight;
-    const top = target.getBoundingClientRect().top + window.scrollY - navH - 16;
+    const top = el.getBoundingClientRect().top + window.scrollY - nav.offsetHeight - 16;
     window.scrollTo({ top, behavior: 'smooth' });
   });
 });
 
-// ── Contact form ───────────────────────────────────
-const contactForm = document.getElementById('contactForm');
-const formSuccess = document.getElementById('formSuccess');
+// ── Filter tabs ───────────────────────────────
+const filterBtns = document.querySelectorAll('.filter-btn');
+const siteCards  = document.querySelectorAll('.site-card');
 
-if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const submitBtn = contactForm.querySelector('button[type="submit"]');
-    submitBtn.textContent = 'Sending...';
-    submitBtn.disabled = true;
-
-    // Simulate async submit
-    setTimeout(() => {
-      contactForm.style.display = 'none';
-      formSuccess.classList.add('visible');
-    }, 1000);
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    siteCards.forEach(card => {
+      const match = filter === 'all' || card.dataset.category === filter;
+      card.classList.toggle('hidden', !match);
+      // re-trigger reveal for newly shown cards
+      if (match && !card.classList.contains('visible')) {
+        setTimeout(() => card.classList.add('visible'), 50);
+      }
+    });
   });
-}
+});
 
-// ── Parallax hero background (subtle) ─────────────
-const heroBg = document.querySelector('.hero__bg');
-if (heroBg && window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
-  window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    if (scrollY < window.innerHeight) {
-      heroBg.style.transform = `translateY(${scrollY * 0.3}px)`;
-    }
-  }, { passive: true });
+// ── Contact form ──────────────────────────────
+const form = document.getElementById('contactForm');
+const success = document.getElementById('formSuccess');
+if (form) {
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const btn = form.querySelector('button[type="submit"]');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    setTimeout(() => {
+      form.style.display = 'none';
+      success.classList.add('visible');
+    }, 900);
+  });
 }
