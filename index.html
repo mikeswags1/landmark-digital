@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apex Movers — Premium Relocation Services</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo">
+        <span class="nav__logo-mark">A</span>
+        <span>Apex Movers</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="btn btn--nav">Get a Quote</a>
+      <button class="nav__burger" id="burger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="mobileMenu">
+      <a href="#services" class="nav__mobile-link">Services</a>
+      <a href="#about" class="nav__mobile-link">About</a>
+      <a href="#testimonials" class="nav__mobile-link">Reviews</a>
+      <a href="#contact" class="nav__mobile-link">Contact</a>
+      <a href="#contact" class="btn btn--primary" style="margin-top:1rem;">Get a Quote</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero__bg"></div>
+    <div class="container hero__content">
+      <div class="hero__badge reveal">Trusted by 10,000+ Families</div>
+      <h1 class="hero__headline reveal reveal--delay-1">
+        Moving Made<br /><span class="gradient-text">Effortless.</span>
+      </h1>
+      <p class="hero__sub reveal reveal--delay-2">
+        White-glove relocation services for homes and businesses.<br class="desktop-only" />
+        Stress-free, transparent, and always on time.
+      </p>
+      <div class="hero__cta reveal reveal--delay-3">
+        <a href="#contact" class="btn btn--primary btn--lg">Get Your Free Quote</a>
+        <a href="#services" class="btn btn--ghost btn--lg">Explore Services</a>
+      </div>
+      <div class="hero__stats reveal reveal--delay-4">
+        <div class="stat">
+          <span class="stat__num" data-target="10000">0</span><span class="stat__unit">+</span>
+          <span class="stat__label">Moves Completed</span>
+        </div>
+        <div class="stat__divider"></div>
+        <div class="stat">
+          <span class="stat__num" data-target="98">0</span><span class="stat__unit">%</span>
+          <span class="stat__label">Customer Satisfaction</span>
+        </div>
+        <div class="stat__divider"></div>
+        <div class="stat">
+          <span class="stat__num" data-target="15">0</span><span class="stat__unit">+</span>
+          <span class="stat__label">Years Experience</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero__scroll">
+      <div class="scroll-indicator">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGOS / TRUST BAR -->
+  <section class="trust-bar">
+    <div class="container">
+      <p class="trust-bar__label">As featured in</p>
+      <div class="trust-bar__logos">
+        <span class="trust-logo">Forbes</span>
+        <span class="trust-logo">The New York Times</span>
+        <span class="trust-logo">Business Insider</span>
+        <span class="trust-logo">Houzz</span>
+        <span class="trust-logo">Angi</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">What We Do</span>
+        <h2 class="section-title">Services Designed<br />Around You</h2>
+        <p class="section-sub">From studio apartments to corporate relocations, we handle every move with the same level of care and precision.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="16" width="36" height="24" rx="3" stroke="currentColor" stroke-width="2.5"/><path d="M16 16V12a8 8 0 0116 0v4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><circle cx="24" cy="28" r="3" fill="currentColor"/></svg>
+          </div>
+          <h3 class="service-card__title">Residential Moving</h3>
+          <p class="service-card__desc">Full-service home moves handled by our expert team — packing, loading, transport, and setup at your new address.</p>
+          <a href="#contact" class="service-card__link">Learn more <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="service-card reveal reveal--delay-1">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="12" width="36" height="28" rx="3" stroke="currentColor" stroke-width="2.5"/><path d="M16 12V10a2 2 0 012-2h12a2 2 0 012 2v2" stroke="currentColor" stroke-width="2.5"/><path d="M6 24h36" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="service-card__title">Office Relocation</h3>
+          <p class="service-card__desc">Minimize downtime with our commercial moving specialists. We plan every detail so your business keeps running smoothly.</p>
+          <a href="#contact" class="service-card__link">Learn more <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="service-card reveal reveal--delay-2">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 36V20l16-12 16 12v16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="18" y="28" width="12" height="8" rx="1" stroke="currentColor" stroke-width="2.5"/></svg>
+          </div>
+          <h3 class="service-card__title">Long Distance</h3>
+          <p class="service-card__desc">Moving across state lines? Our GPS-tracked fleet and dedicated coordinators ensure your belongings arrive safely.</p>
+          <a href="#contact" class="service-card__link">Learn more <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="service-card reveal reveal--delay-3">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="10" width="32" height="28" rx="3" stroke="currentColor" stroke-width="2.5"/><path d="M8 22h32" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><circle cx="20" cy="16" r="2" fill="currentColor"/><circle cx="28" cy="16" r="2" fill="currentColor"/></svg>
+          </div>
+          <h3 class="service-card__title">Packing Services</h3>
+          <p class="service-card__desc">Professional packing with premium materials. Every item labeled, wrapped, and organized for a seamless unpack.</p>
+          <a href="#contact" class="service-card__link">Learn more <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="service-card reveal reveal--delay-1">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="14" width="28" height="22" rx="2" stroke="currentColor" stroke-width="2.5"/><path d="M10 22h28M18 22v14M30 22v14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="service-card__title">Storage Solutions</h3>
+          <p class="service-card__desc">Climate-controlled, secure storage facilities available short or long term — perfect for in-between moves.</p>
+          <a href="#contact" class="service-card__link">Learn more <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="service-card reveal reveal--delay-2">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 8l3.09 9.26H36l-7.27 5.28 2.78 8.55L24 26.1l-7.51 5 2.78-8.55L12 17.26h8.91L24 8z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="M8 40h32" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="service-card__title">White Glove</h3>
+          <p class="service-card__desc">Our premium tier. Furniture assembly, art installation, floor protection, and concierge-level care from start to finish.</p>
+          <a href="#contact" class="service-card__link">Learn more <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT / PROCESS -->
+  <section class="section section--alt" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about__visual reveal">
+          <div class="about__image-wrap">
+            <div class="about__image-placeholder">
+              <div class="image-overlay"></div>
+              <div class="about__image-content">
+                <div class="about__badge-card">
+                  <span class="badge-num">15</span>
+                  <span class="badge-text">Years of<br/>Excellence</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about__copy">
+          <div class="reveal">
+            <span class="section-tag">Our Story</span>
+            <h2 class="section-title">Moving Is Personal.<br />We Treat It That Way.</h2>
+            <p class="about__text">Founded in 2009, Apex Movers was built on a simple belief: every move is a major life moment and deserves more than a truck and a handshake.</p>
+            <p class="about__text">Today, our team of 200+ certified movers serves thousands of families and businesses each year — each one receiving the same commitment to care, transparency, and flawless execution.</p>
+          </div>
+          <div class="process-steps reveal reveal--delay-1">
+            <div class="process-step">
+              <div class="process-step__num">01</div>
+              <div>
+                <h4>Free Consultation</h4>
+                <p>We assess your move and provide a detailed, transparent quote within 24 hours — no hidden fees.</p>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="process-step__num">02</div>
+              <div>
+                <h4>Expert Packing</h4>
+                <p>Our trained team arrives on moving day with all materials to carefully pack and protect your belongings.</p>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="process-step__num">03</div>
+              <div>
+                <h4>Seamless Delivery</h4>
+                <p>GPS-tracked transport, real-time updates, and white-glove placement in your new space.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section" id="testimonials">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Real Reviews</span>
+        <h2 class="section-title">10,000+ Happy Moves<br />and Counting</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal">
+          <div class="testimonial-card__stars">★★★★★</div>
+          <p class="testimonial-card__quote">"Apex made our cross-country move feel completely stress-free. Every single box arrived exactly as packed. Worth every penny."</p>
+          <div class="testimonial-card__author">
+            <div class="author-avatar">SE</div>
+            <div>
+              <strong>Sarah E.</strong>
+              <span>New York → Los Angeles</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal reveal--delay-1">
+          <div class="testimonial-card__stars">★★★★★</div>
+          <p class="testimonial-card__quote">"Moved our 12-person office in a single weekend. Zero downtime Monday morning. These guys are absolute professionals."</p>
+          <div class="testimonial-card__author">
+            <div class="author-avatar">MK</div>
+            <div>
+              <strong>Marcus K.</strong>
+              <span>CEO, Fintech Startup</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal reveal--delay-2">
+          <div class="testimonial-card__stars">★★★★★</div>
+          <p class="testimonial-card__quote">"I've moved 6 times in my life. This was the first time I actually enjoyed the process. The team was incredible — fast, careful, and friendly."</p>
+          <div class="testimonial-card__author">
+            <div class="author-avatar">JL</div>
+            <div>
+              <strong>Jennifer L.</strong>
+              <span>Chicago, IL</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal reveal--delay-1">
+          <div class="testimonial-card__stars">★★★★★</div>
+          <p class="testimonial-card__quote">"The white glove service is genuinely white glove. They wrapped every piece of art, assembled all furniture, and even swept the floor before leaving."</p>
+          <div class="testimonial-card__author">
+            <div class="author-avatar">RT</div>
+            <div>
+              <strong>Robert T.</strong>
+              <span>Austin, TX</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal reveal--delay-2">
+          <div class="testimonial-card__stars">★★★★★</div>
+          <p class="testimonial-card__quote">"Got 4 quotes. Apex wasn't the cheapest but the transparent pricing and 5-star track record made the choice obvious. No regrets at all."</p>
+          <div class="testimonial-card__author">
+            <div class="author-avatar">AP</div>
+            <div>
+              <strong>Aisha P.</strong>
+              <span>Seattle, WA</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal reveal--delay-3">
+          <div class="testimonial-card__stars">★★★★★</div>
+          <p class="testimonial-card__quote">"Used Apex for storage between moves. Clean facility, easy access, and the staff was always helpful. Will use again without hesitation."</p>
+          <div class="testimonial-card__author">
+            <div class="author-avatar">DM</div>
+            <div>
+              <strong>David M.</strong>
+              <span>Boston, MA</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner reveal">
+    <div class="container">
+      <div class="cta-banner__inner">
+        <div>
+          <h2>Ready to Move?</h2>
+          <p>Get your free, no-obligation quote in under 2 minutes.</p>
+        </div>
+        <a href="#contact" class="btn btn--primary btn--lg">Get a Free Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact__info reveal">
+          <span class="section-tag">Get in Touch</span>
+          <h2 class="section-title">Let's Plan<br />Your Move</h2>
+          <p class="contact__text">Fill out the form and a move specialist will reach out within 2 business hours with a personalized quote.</p>
+          <div class="contact__details">
+            <div class="contact__detail">
+              <div class="contact__detail-icon">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.95 10.5 19.79 19.79 0 01.88 1.87 2 2 0 012.86 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <strong>Phone</strong>
+                <span>1-800-APEX-MOVE</span>
+              </div>
+            </div>
+            <div class="contact__detail">
+              <div class="contact__detail-icon">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <strong>Email</strong>
+                <span>hello@apexmovers.com</span>
+              </div>
+            </div>
+            <div class="contact__detail">
+              <div class="contact__detail-icon">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="1.5"/></svg>
+              </div>
+              <div>
+                <strong>Headquarters</strong>
+                <span>New York, NY — Serving Nationwide</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contact__form-wrap reveal reveal--delay-1">
+          <form class="contact-form" id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" placeholder="Jane" required />
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" placeholder="Doe" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" placeholder="jane@example.com" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" placeholder="(555) 000-0000" />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="moveFrom">Moving From</label>
+                <input type="text" id="moveFrom" placeholder="City, State" required />
+              </div>
+              <div class="form-group">
+                <label for="moveTo">Moving To</label>
+                <input type="text" id="moveTo" placeholder="City, State" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="service">Service Type</label>
+              <select id="service">
+                <option value="">Select a service...</option>
+                <option>Residential Moving</option>
+                <option>Office Relocation</option>
+                <option>Long Distance</option>
+                <option>Packing Services</option>
+                <option>Storage Solutions</option>
+                <option>White Glove</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Additional Details</label>
+              <textarea id="message" rows="3" placeholder="Move date, special items, or anything else we should know..."></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full">Request My Free Quote</button>
+          </form>
+          <div class="form-success" id="formSuccess">
+            <div class="form-success__icon">✓</div>
+            <h3>Quote Request Sent!</h3>
+            <p>A move specialist will contact you within 2 business hours.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="#" class="nav__logo">
+            <span class="nav__logo-mark">A</span>
+            <span>Apex Movers</span>
+          </a>
+          <p>Premium relocation services for homes and businesses. Serving the nation since 2009.</p>
+        </div>
+        <div class="footer__links-group">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">Residential Moving</a></li>
+            <li><a href="#services">Office Relocation</a></li>
+            <li><a href="#services">Long Distance</a></li>
+            <li><a href="#services">White Glove</a></li>
+          </ul>
+        </div>
+        <div class="footer__links-group">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer__links-group">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Licensing</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 Apex Movers. All rights reserved.</p>
+        <p>Licensed & Insured · USDOT #1234567</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
