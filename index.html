@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Landmark Digital — Premium Website Design</title>
+  <title>Landmark Digital - Websites, Ads, and Lead Systems</title>
+  <meta name="description" content="Landmark Digital builds websites, ad campaigns, and lead systems for local and service businesses that want more qualified inquiries." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -11,656 +12,247 @@
 </head>
 <body>
 
-  <!-- NAV -->
   <nav class="nav" id="nav">
     <div class="nav__inner">
       <a href="#" class="nav__logo">
-        <span class="nav__logo-mark">W</span>
+        <span class="nav__logo-mark">L</span>
         <span>Landmark Digital</span>
       </a>
       <ul class="nav__links">
-        <li><a href="#showcase">Our Work</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#industries">Who We Help</a></li>
         <li><a href="#process">Process</a></li>
         <li><a href="#pricing">Pricing</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <a href="#contact" class="btn btn--nav">Start a Project</a>
+      <a href="#contact" class="btn btn--nav">Get a Growth Demo</a>
       <button class="nav__burger" id="burger" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
     </div>
     <div class="nav__mobile" id="mobileMenu">
-      <a href="#showcase" class="nav__mobile-link">Our Work</a>
+      <a href="#services" class="nav__mobile-link">Services</a>
+      <a href="#industries" class="nav__mobile-link">Who We Help</a>
       <a href="#process" class="nav__mobile-link">Process</a>
       <a href="#pricing" class="nav__mobile-link">Pricing</a>
       <a href="#contact" class="nav__mobile-link">Contact</a>
-      <a href="#contact" class="btn btn--primary" style="margin-top:1rem;width:100%;justify-content:center;">Start a Project</a>
+      <a href="#contact" class="btn btn--primary" style="margin-top:1rem;width:100%;justify-content:center;">Get a Growth Demo</a>
     </div>
   </nav>
 
-  <!-- HERO -->
   <section class="hero">
     <div class="hero__bg-grid"></div>
     <div class="container hero__content">
-      <div class="hero__badge reveal">Custom Websites · Fast Turnaround · No Templates</div>
+      <div class="hero__badge reveal">Websites - Ads - Lead Systems</div>
       <h1 class="hero__headline reveal reveal--delay-1">
-        Your Business Deserves<br /><span class="gradient-text">A Website That Works.</span>
+        Turn Traffic Into<br /><span class="gradient-text">Real Business Leads.</span>
       </h1>
       <p class="hero__sub reveal reveal--delay-2">
-        We design and build premium, conversion-focused websites for every industry. Browse our styles below — then let's build yours.
+        Landmark Digital builds conversion-focused websites, targeted ad campaigns, and simple lead systems for local and service businesses that want more calls, quote requests, and booked jobs.
       </p>
       <div class="hero__cta reveal reveal--delay-3">
-        <a href="#showcase" class="btn btn--primary btn--lg">Browse Website Styles</a>
-        <a href="#contact" class="btn btn--ghost btn--lg">Get a Free Quote</a>
+        <a href="#contact" class="btn btn--primary btn--lg">Get Your Free Growth Demo</a>
+        <a href="#services" class="btn btn--ghost btn--lg">See What We Build</a>
       </div>
       <div class="hero__stats reveal reveal--delay-4">
-        <div class="stat"><span class="stat__num" data-target="200">0</span><span class="stat__unit">+</span><span class="stat__label">Websites Delivered</span></div>
+        <div class="stat"><span class="stat__num" data-target="24">0</span><span class="stat__unit"> hr</span><span class="stat__label">Demo Turnaround</span></div>
         <div class="stat__divider"></div>
-        <div class="stat"><span class="stat__num" data-target="12">0</span><span class="stat__unit"></span><span class="stat__label">Industries Served</span></div>
+        <div class="stat"><span class="stat__num" data-target="3">0</span><span class="stat__unit"></span><span class="stat__label">Growth Offers</span></div>
         <div class="stat__divider"></div>
-        <div class="stat"><span class="stat__num" data-target="7">0</span><span class="stat__unit"> day</span><span class="stat__label">Avg. Launch Time</span></div>
+        <div class="stat"><span class="stat__num" data-target="0">0</span><span class="stat__unit">$</span><span class="stat__label">Upfront Demo Cost</span></div>
         <div class="stat__divider"></div>
-        <div class="stat"><span class="stat__num" data-target="98">0</span><span class="stat__unit">%</span><span class="stat__label">Client Satisfaction</span></div>
+        <div class="stat"><span class="stat__num" data-target="1">0</span><span class="stat__unit"></span><span class="stat__label">Clear Next Step</span></div>
       </div>
     </div>
   </section>
 
-  <!-- SHOWCASE -->
-  <section class="section" id="showcase">
+  <section class="section" id="services">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-tag">Website Styles</span>
-        <h2 class="section-title">Pick Your Style.<br />We'll Build It.</h2>
-        <p class="section-sub">Every website below is a real design style we offer — custom-built for your brand, not a template.</p>
-      </div>
-
-      <!-- Filter tabs -->
-      <div class="filter-tabs reveal">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="business">Business</button>
-        <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
-        <button class="filter-btn" data-filter="creative">Creative</button>
-        <button class="filter-btn" data-filter="services">Services</button>
-      </div>
-
-      <div class="showcase-grid" id="showcaseGrid">
-
-        <!-- 1. Restaurant -->
-        <div class="site-card reveal" data-category="business">
-          <div class="browser-frame">
-            <div class="browser-bar">
-              <span class="dot dot--red"></span><span class="dot dot--yellow"></span><span class="dot dot--green"></span>
-              <span class="browser-url">yourrestaurant.com</span>
-            </div>
-            <div class="browser-body preview-restaurant">
-              <div class="prev-nav-dark">
-                <span class="prev-logo-text">EMBER</span>
-                <div class="prev-nav-links"><span></span><span></span><span></span></div>
-              </div>
-              <div class="prev-hero-restaurant">
-                <div class="prev-hero-label">Fine Dining &amp; Cocktails</div>
-                <div class="prev-hero-title">Where Every Meal<br/>Is an Experience</div>
-                <div class="prev-btn-sm prev-btn-gold">Reserve a Table</div>
-              </div>
-              <div class="prev-menu-row">
-                <div class="prev-menu-item"></div>
-                <div class="prev-menu-item"></div>
-                <div class="prev-menu-item"></div>
-              </div>
-            </div>
-          </div>
-          <div class="site-card__info">
-            <div class="site-card__meta">
-              <span class="site-card__tag">Restaurant</span>
-              <span class="site-card__tag site-card__tag--pop">Popular</span>
-            </div>
-            <h3>Fine Dining &amp; Café</h3>
-            <p>Moody, elegant design with menu showcase, online reservations, and gallery.</p>
-            <a href="#contact" class="site-card__cta">Get this style <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          </div>
-        </div>
-
-        <!-- 2. E-commerce -->
-        <div class="site-card reveal reveal--delay-1" data-category="ecommerce">
-          <div class="browser-frame">
-            <div class="browser-bar">
-              <span class="dot dot--red"></span><span class="dot dot--yellow"></span><span class="dot dot--green"></span>
-              <span class="browser-url">yourshop.com</span>
-            </div>
-            <div class="browser-body preview-ecom">
-              <div class="prev-nav-light">
-                <span class="prev-logo-text dark">LUXE</span>
-                <div class="prev-search-bar"></div>
-                <div class="prev-cart-icon">🛒</div>
-              </div>
-              <div class="prev-hero-ecom">
-                <div class="prev-ecom-headline">New Collection<br/>Spring 2026</div>
-                <div class="prev-btn-sm prev-btn-dark">Shop Now</div>
-              </div>
-              <div class="prev-product-row">
-                <div class="prev-product"></div>
-                <div class="prev-product"></div>
-                <div class="prev-product"></div>
-                <div class="prev-product"></div>
-              </div>
-            </div>
-          </div>
-          <div class="site-card__info">
-            <div class="site-card__meta">
-              <span class="site-card__tag">E-commerce</span>
-              <span class="site-card__tag site-card__tag--pop">Best Seller</span>
-            </div>
-            <h3>Online Store</h3>
-            <p>Full shopping experience with product pages, cart, checkout, and Stripe payments.</p>
-            <a href="#contact" class="site-card__cta">Get this style <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          </div>
-        </div>
-
-        <!-- 3. Real Estate -->
-        <div class="site-card reveal reveal--delay-2" data-category="business">
-          <div class="browser-frame">
-            <div class="browser-bar">
-              <span class="dot dot--red"></span><span class="dot dot--yellow"></span><span class="dot dot--green"></span>
-              <span class="browser-url">yourestate.com</span>
-            </div>
-            <div class="browser-body preview-realestate">
-              <div class="prev-nav-light">
-                <span class="prev-logo-text dark">HAVEN</span>
-                <div class="prev-nav-links dark"><span></span><span></span><span></span></div>
-              </div>
-              <div class="prev-search-hero">
-                <div class="prev-search-title">Find Your Dream Home</div>
-                <div class="prev-search-box">
-                  <div class="prev-search-input"></div>
-                  <div class="prev-btn-sm prev-btn-blue">Search</div>
-                </div>
-              </div>
-              <div class="prev-listing-row">
-                <div class="prev-listing">
-                  <div class="prev-listing-img"></div>
-                  <div class="prev-listing-info"><div></div><div></div></div>
-                </div>
-                <div class="prev-listing">
-                  <div class="prev-listing-img"></div>
-                  <div class="prev-listing-info"><div></div><div></div></div>
-                </div>
-                <div class="prev-listing">
-                  <div class="prev-listing-img"></div>
-                  <div class="prev-listing-info"><div></div><div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="site-card__info">
-            <div class="site-card__meta">
-              <span class="site-card__tag">Real Estate</span>
-            </div>
-            <h3>Real Estate Agency</h3>
-            <p>Property listings, search filters, agent profiles, and lead capture forms.</p>
-            <a href="#contact" class="site-card__cta">Get this style <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          </div>
-        </div>
-
-        <!-- 4. Law Firm -->
-        <div class="site-card reveal reveal--delay-1" data-category="services">
-          <div class="browser-frame">
-            <div class="browser-bar">
-              <span class="dot dot--red"></span><span class="dot dot--yellow"></span><span class="dot dot--green"></span>
-              <span class="browser-url">yourfirm.com</span>
-            </div>
-            <div class="browser-body preview-law">
-              <div class="prev-nav-dark">
-                <span class="prev-logo-text" style="font-size:7px;letter-spacing:.05em;">STERLING &amp; ASSOCIATES</span>
-                <div class="prev-nav-links"><span></span><span></span></div>
-              </div>
-              <div class="prev-hero-law">
-                <div class="prev-law-eyebrow">Trusted Legal Counsel</div>
-                <div class="prev-law-title">Justice Starts<br/>With a Call</div>
-                <div class="prev-btn-sm prev-btn-gold">Free Consultation</div>
-              </div>
-              <div class="prev-practice-row">
-                <div class="prev-practice-area"><div class="prev-pa-icon"></div><div class="prev-pa-lines"><div></div><div></div></div></div>
-                <div class="prev-practice-area"><div class="prev-pa-icon"></div><div class="prev-pa-lines"><div></div><div></div></div></div>
-                <div class="prev-practice-area"><div class="prev-pa-icon"></div><div class="prev-pa-lines"><div></div><div></div></div></div>
-              </div>
-            </div>
-          </div>
-          <div class="site-card__info">
-            <div class="site-card__meta">
-              <span class="site-card__tag">Law Firm</span>
-            </div>
-            <h3>Law &amp; Legal Services</h3>
-            <p>Authority-driven design with practice areas, attorney bios, and consultation booking.</p>
-            <a href="#contact" class="site-card__cta">Get this style <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          </div>
-        </div>
-
-        <!-- 5. Fitness / Gym -->
-        <div class="site-card reveal reveal--delay-2" data-category="services">
-          <div class="browser-frame">
-            <div class="browser-bar">
-              <span class="dot dot--red"></span><span class="dot dot--yellow"></span><span class="dot dot--green"></span>
-              <span class="browser-url">yourgym.com</span>
-            </div>
-            <div class="browser-body preview-gym">
-              <div class="prev-nav-dark">
-                <span class="prev-logo-text" style="color:#facc15;">APEX FIT</span>
-                <div class="prev-nav-links"><span></span><span></span><span></span></div>
-              </div>
-              <div class="prev-hero-gym">
-                <div class="prev-gym-tag">TRANSFORM YOUR BODY</div>
-                <div class="prev-gym-title">No Limits.<br/>Just Results.</div>
-                <div class="prev-btn-sm prev-btn-yellow">Join Today — Free Week</div>
-              </div>
-              <div class="prev-stats-row">
-                <div class="prev-stat-box"><div class="prev-stat-num">500+</div><div class="prev-stat-lbl">Members</div></div>
-                <div class="prev-stat-box"><div class="prev-stat-num">20+</div><div class="prev-stat-lbl">Classes</div></div>
-                <div class="prev-stat-box"><div class="prev-stat-num">5★</div><div class="prev-stat-lbl">Rated</div></div>
-              </div>
-            </div>
-          </div>
-          <div class="site-card__info">
-            <div class="site-card__meta">
-              <span class="site-card__tag">Fitness</span>
-            </div>
-            <h3>Gym &amp; Fitness Studio</h3>
-            <p>High-energy design with class schedules, membership plans, and trainer profiles.</p>
-            <a href="#contact" class="site-card__cta">Get this style <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          </div>
-        </div>
-
-        <!-- 6. Photography Portfolio -->
-        <div class="site-card reveal reveal--delay-3" data-category="creative">
-          <div class="browser-frame">
-            <div class="browser-bar">
-              <span class="dot dot--red"></span><span class="dot dot--yellow"></span><span class="dot dot--green"></span>
-              <span class="browser-url">yourportfolio.com</span>
-            </div>
-            <div class="browser-body preview-photo">
-              <div class="prev-nav-transparent">
-                <span class="prev-logo-text">CLARA MOSS</span>
-                <div class="prev-nav-links"><span></span><span></span><span></span></div>
-              </div>
-              <div class="prev-photo-grid">
-                <div class="prev-photo-cell tall"></div>
-                <div class="prev-photo-col">
-                  <div class="prev-photo-cell"></div>
-                  <div class="prev-photo-cell"></div>
-                </div>
-                <div class="prev-photo-cell"></div>
-                <div class="prev-photo-cell"></div>
-              </div>
-              <div class="prev-photo-overlay">
-                <div class="prev-photo-name">Photography &amp; Visual Art</div>
-              </div>
-            </div>
-          </div>
-          <div class="site-card__info">
-            <div class="site-card__meta">
-              <span class="site-card__tag">Creative</span>
-            </div>
-            <h3>Photography Portfolio</h3>
-            <p>Immersive full-screen gallery with masonry grid, lightbox viewer, and contact form.</p>
-            <a href="#contact" class="site-card__cta">Get this style <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          </div>
-        </div>
-
-        <!-- 7. Medical / Healthcare -->
-        <div class="site-card reveal" data-category="services">
-          <div class="browser-frame">
-            <div class="browser-bar">
-              <span class="dot dot--red"></span><span class="dot dot--yellow"></span><span class="dot dot--green"></span>
-              <span class="browser-url">yourclinic.com</span>
-            </div>
-            <div class="browser-body preview-medical">
-              <div class="prev-nav-white">
-                <span class="prev-logo-text" style="color:#0ea5e9;font-size:8px;">CLARITY HEALTH</span>
-                <div class="prev-nav-links dark"><span></span><span></span><span></span></div>
-                <div class="prev-btn-xs">Book</div>
-              </div>
-              <div class="prev-hero-medical">
-                <div class="prev-medical-headline">Your Health,<br/>Our Priority</div>
-                <div class="prev-medical-sub">Accepting new patients</div>
-                <div class="prev-btn-sm prev-btn-blue">Book Appointment</div>
-              </div>
-              <div class="prev-services-row">
-                <div class="prev-service-pill"></div>
-                <div class="prev-service-pill"></div>
-                <div class="prev-service-pill"></div>
-              </div>
-            </div>
-          </div>
-          <div class="site-card__info">
-            <div class="site-card__meta">
-              <span class="site-card__tag">Healthcare</span>
-            </div>
-            <h3>Medical &amp; Clinic</h3>
-            <p>Clean, trustworthy design with appointment booking, services, and patient info.</p>
-            <a href="#contact" class="site-card__cta">Get this style <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          </div>
-        </div>
-
-        <!-- 8. SaaS / Tech Startup -->
-        <div class="site-card reveal reveal--delay-1" data-category="business">
-          <div class="browser-frame">
-            <div class="browser-bar">
-              <span class="dot dot--red"></span><span class="dot dot--yellow"></span><span class="dot dot--green"></span>
-              <span class="browser-url">yourapp.io</span>
-            </div>
-            <div class="browser-body preview-saas">
-              <div class="prev-nav-dark">
-                <span class="prev-logo-text" style="color:#a78bfa;">FLOW</span>
-                <div class="prev-nav-links"><span></span><span></span><span></span></div>
-                <div class="prev-btn-xs saas">Try Free</div>
-              </div>
-              <div class="prev-hero-saas">
-                <div class="prev-saas-badge">Rated #1 by G2 ✦</div>
-                <div class="prev-saas-headline">Ship Faster.<br/>Scale Smarter.</div>
-                <div class="prev-saas-btns">
-                  <div class="prev-btn-sm prev-btn-purple">Start Free Trial</div>
-                  <div class="prev-btn-sm prev-btn-ghost-sm">Watch Demo</div>
-                </div>
-              </div>
-              <div class="prev-dashboard-mockup">
-                <div class="prev-dash-sidebar"></div>
-                <div class="prev-dash-main">
-                  <div class="prev-dash-row"></div>
-                  <div class="prev-dash-row short"></div>
-                  <div class="prev-dash-row"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="site-card__info">
-            <div class="site-card__meta">
-              <span class="site-card__tag">SaaS</span>
-              <span class="site-card__tag site-card__tag--pop">Trending</span>
-            </div>
-            <h3>SaaS &amp; Tech Startup</h3>
-            <p>Dark, futuristic design with feature sections, pricing table, and app dashboard preview.</p>
-            <a href="#contact" class="site-card__cta">Get this style <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          </div>
-        </div>
-
-        <!-- 9. Moving Company -->
-        <div class="site-card reveal reveal--delay-2" data-category="services">
-          <div class="browser-frame">
-            <div class="browser-bar">
-              <span class="dot dot--red"></span><span class="dot dot--yellow"></span><span class="dot dot--green"></span>
-              <span class="browser-url">yourmovers.com</span>
-            </div>
-            <div class="browser-body preview-moving">
-              <div class="prev-nav-light">
-                <span class="prev-logo-text dark">SWIFT MOVERS</span>
-                <div class="prev-nav-links dark"><span></span><span></span></div>
-                <div class="prev-btn-xs dark">Quote</div>
-              </div>
-              <div class="prev-hero-moving">
-                <div class="prev-moving-headline">Moving Day,<br/>Made Easy.</div>
-                <div class="prev-btn-sm prev-btn-orange">Get a Free Quote</div>
-              </div>
-              <div class="prev-trust-row">
-                <div class="prev-trust-badge"><div></div><span>Licensed</span></div>
-                <div class="prev-trust-badge"><div></div><span>Insured</span></div>
-                <div class="prev-trust-badge"><div></div><span>5-Star</span></div>
-              </div>
-            </div>
-          </div>
-          <div class="site-card__info">
-            <div class="site-card__meta">
-              <span class="site-card__tag">Moving</span>
-            </div>
-            <h3>Moving Company</h3>
-            <p>Trust-building layout with service areas, quote calculator, and customer reviews.</p>
-            <a href="#contact" class="site-card__cta">Get this style <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          </div>
-        </div>
-
-        <!-- 10. Creative Agency -->
-        <div class="site-card reveal reveal--delay-3" data-category="creative">
-          <div class="browser-frame">
-            <div class="browser-bar">
-              <span class="dot dot--red"></span><span class="dot dot--yellow"></span><span class="dot dot--green"></span>
-              <span class="browser-url">youragency.com</span>
-            </div>
-            <div class="browser-body preview-agency">
-              <div class="prev-nav-dark">
-                <span class="prev-logo-text">BOLD.</span>
-                <div class="prev-nav-links"><span></span><span></span><span></span></div>
-              </div>
-              <div class="prev-hero-agency">
-                <div class="prev-agency-num">01</div>
-                <div class="prev-agency-headline">We Make<br/>Brands Loud.</div>
-                <div class="prev-agency-scroll">↓ scroll</div>
-              </div>
-              <div class="prev-work-strip">
-                <div class="prev-work-item w1"></div>
-                <div class="prev-work-item w2"></div>
-                <div class="prev-work-item w3"></div>
-              </div>
-            </div>
-          </div>
-          <div class="site-card__info">
-            <div class="site-card__meta">
-              <span class="site-card__tag">Creative</span>
-            </div>
-            <h3>Creative Agency</h3>
-            <p>Bold editorial design with oversized type, full-bleed portfolio, and smooth scroll effects.</p>
-            <a href="#contact" class="site-card__cta">Get this style <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          </div>
-        </div>
-
-        <!-- 11. Hotel / Hospitality -->
-        <div class="site-card reveal reveal--delay-1" data-category="business">
-          <div class="browser-frame">
-            <div class="browser-bar">
-              <span class="dot dot--red"></span><span class="dot dot--yellow"></span><span class="dot dot--green"></span>
-              <span class="browser-url">yourhotel.com</span>
-            </div>
-            <div class="browser-body preview-hotel">
-              <div class="prev-nav-transparent" style="background:rgba(0,0,0,.2);">
-                <span class="prev-logo-text" style="letter-spacing:.15em;font-size:7px;">THE GRAND</span>
-                <div class="prev-nav-links"><span></span><span></span><span></span></div>
-              </div>
-              <div class="prev-hero-hotel">
-                <div class="prev-hotel-tag">Luxury Boutique Hotel</div>
-                <div class="prev-hotel-title">Experience<br/>Timeless Luxury</div>
-                <div class="prev-book-strip">
-                  <div class="prev-book-field"></div>
-                  <div class="prev-book-field"></div>
-                  <div class="prev-btn-sm prev-btn-gold">Book Now</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="site-card__info">
-            <div class="site-card__meta">
-              <span class="site-card__tag">Hospitality</span>
-            </div>
-            <h3>Hotel &amp; Hospitality</h3>
-            <p>Luxury aesthetic with full-screen imagery, room booking, amenities, and reviews.</p>
-            <a href="#contact" class="site-card__cta">Get this style <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          </div>
-        </div>
-
-        <!-- 12. Personal Brand -->
-        <div class="site-card reveal reveal--delay-2" data-category="creative">
-          <div class="browser-frame">
-            <div class="browser-bar">
-              <span class="dot dot--red"></span><span class="dot dot--yellow"></span><span class="dot dot--green"></span>
-              <span class="browser-url">yourname.com</span>
-            </div>
-            <div class="browser-body preview-personal">
-              <div class="prev-nav-light">
-                <span class="prev-logo-text dark" style="font-size:8px;">ALEX MORGAN</span>
-                <div class="prev-nav-links dark"><span></span><span></span><span></span></div>
-              </div>
-              <div class="prev-hero-personal">
-                <div class="prev-personal-avatar"></div>
-                <div class="prev-personal-name">Alex Morgan</div>
-                <div class="prev-personal-title">Designer · Speaker · Advisor</div>
-                <div class="prev-personal-links">
-                  <div class="prev-social-dot"></div>
-                  <div class="prev-social-dot"></div>
-                  <div class="prev-social-dot"></div>
-                </div>
-              </div>
-              <div class="prev-featured-row">
-                <div class="prev-featured-item"></div>
-                <div class="prev-featured-item"></div>
-              </div>
-            </div>
-          </div>
-          <div class="site-card__info">
-            <div class="site-card__meta">
-              <span class="site-card__tag">Personal Brand</span>
-            </div>
-            <h3>Personal Brand &amp; Speaker</h3>
-            <p>Clean, minimal bio site with speaking topics, press features, newsletter, and booking.</p>
-            <a href="#contact" class="site-card__cta">Get this style <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          </div>
-        </div>
-
-      </div><!-- /showcase-grid -->
-
-      <div class="showcase-footer reveal">
-        <p>Don't see your industry? <a href="#contact">We build for every niche.</a></p>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROCESS -->
-  <section class="section section--alt" id="process">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-tag">How It Works</span>
-        <h2 class="section-title">From Idea to Live<br />in 7 Days</h2>
-        <p class="section-sub">A streamlined process so you get a stunning website fast — without the back-and-forth nightmare.</p>
+        <span class="section-tag">What We Build</span>
+        <h2 class="section-title">More Than a Website.<br />A Growth System.</h2>
+        <p class="section-sub">A good site should make your business look trusted, explain your offer clearly, and turn the right visitors into conversations.</p>
       </div>
       <div class="process-grid">
         <div class="process-card reveal">
           <div class="process-card__step">01</div>
-          <h3>Discovery Call</h3>
-          <p>We learn your brand, goals, and audience in a 30-minute call. No forms, no fluff — just a real conversation.</p>
+          <h3>Websites That Convert</h3>
+          <p>Custom websites, landing pages, service pages, quote forms, booking flows, mobile optimization, and credibility-building copy.</p>
         </div>
         <div class="process-card reveal reveal--delay-1">
           <div class="process-card__step">02</div>
-          <h3>Design Proposal</h3>
-          <p>We send a custom mockup within 48 hours based on the style you choose. You give feedback. We refine.</p>
+          <h3>Ad Marketing</h3>
+          <p>Google and social ad campaigns built around a clear offer, a focused landing page, and tracking that shows where leads come from.</p>
         </div>
         <div class="process-card reveal reveal--delay-2">
           <div class="process-card__step">03</div>
-          <h3>Build &amp; Launch</h3>
-          <p>Your site goes live within 7 days — fully responsive, SEO-ready, and connected to your domain.</p>
+          <h3>Lead Systems</h3>
+          <p>Forms, dashboards, CRM-style pipelines, notifications, and follow-up workflows so new opportunities do not get lost.</p>
         </div>
         <div class="process-card reveal reveal--delay-3">
           <div class="process-card__step">04</div>
-          <h3>Support &amp; Grow</h3>
-          <p>We don't disappear after launch. Updates, edits, and ongoing support are always just a message away.</p>
+          <h3>Ongoing Growth</h3>
+          <p>Monthly updates, campaign improvements, conversion fixes, reporting, and new pages as your business expands.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PRICING -->
-  <section class="section" id="pricing">
+  <section class="section section--alt" id="industries">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Who We Help</span>
+        <h2 class="section-title">Built for Businesses<br />That Need Real Inquiries.</h2>
+        <p class="section-sub">We work especially well with service businesses, local companies, specialty operators, and growing brands where every qualified lead matters.</p>
+      </div>
+      <div class="showcase-grid">
+        <div class="site-card reveal" data-category="services">
+          <div class="site-card__info">
+            <div class="site-card__meta"><span class="site-card__tag">Services</span></div>
+            <h3>Contractors & Field Services</h3>
+            <p>Websites and ad funnels for companies that need calls, quote requests, service-area pages, and trust signals.</p>
+            <a href="#contact" class="site-card__cta">Build my lead system</a>
+          </div>
+        </div>
+        <div class="site-card reveal reveal--delay-1" data-category="business">
+          <div class="site-card__info">
+            <div class="site-card__meta"><span class="site-card__tag">Local Business</span></div>
+            <h3>Shops, Salons & Local Brands</h3>
+            <p>Clear websites, booking flows, offers, reviews, and campaigns that help nearby customers choose you faster.</p>
+            <a href="#contact" class="site-card__cta">Plan my website</a>
+          </div>
+        </div>
+        <div class="site-card reveal reveal--delay-2" data-category="business">
+          <div class="site-card__info">
+            <div class="site-card__meta"><span class="site-card__tag">Specialty</span></div>
+            <h3>Industrial & Niche Companies</h3>
+            <p>For surplus buyers, recyclers, cleanout crews, equipment removal companies, and other high-value service niches.</p>
+            <a href="#contact" class="site-card__cta">Show me ideas</a>
+          </div>
+        </div>
+      </div>
+      <div class="showcase-footer reveal">
+        <p>Not sure where you fit? <a href="#contact">Send your business and we will map the best offer.</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="process">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">How It Works</span>
+        <h2 class="section-title">A Simple Path<br />From Idea to Leads.</h2>
+        <p class="section-sub">We keep the process direct so you can see what we would build before you commit to a full project.</p>
+      </div>
+      <div class="process-grid">
+        <div class="process-card reveal">
+          <div class="process-card__step">01</div>
+          <h3>Quick Discovery</h3>
+          <p>We learn what you sell, who you want to reach, what a good lead is worth, and what your current site or marketing is missing.</p>
+        </div>
+        <div class="process-card reveal reveal--delay-1">
+          <div class="process-card__step">02</div>
+          <h3>Free Growth Demo</h3>
+          <p>We create a focused demo or plan that shows the website, landing page, or lead flow we would build for your business.</p>
+        </div>
+        <div class="process-card reveal reveal--delay-2">
+          <div class="process-card__step">03</div>
+          <h3>Build & Launch</h3>
+          <p>Once approved, we build the pages, forms, tracking, and campaign pieces needed to turn attention into qualified inquiries.</p>
+        </div>
+        <div class="process-card reveal reveal--delay-3">
+          <div class="process-card__step">04</div>
+          <h3>Track & Improve</h3>
+          <p>We watch what happens after launch, improve weak spots, and help you keep turning traffic into better opportunities.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="pricing">
     <div class="container">
       <div class="section-header reveal">
         <span class="section-tag">Pricing</span>
-        <h2 class="section-title">Simple, Transparent<br />Pricing</h2>
-        <p class="section-sub">No surprises. No hidden fees. Pick the plan that fits your goals.</p>
+        <h2 class="section-title">Start With The System<br />That Fits Your Stage.</h2>
+        <p class="section-sub">These are starting points. The final scope depends on your business, market, and growth goals.</p>
       </div>
       <div class="pricing-grid">
         <div class="pricing-card reveal">
-          <div class="pricing-card__tier">Starter</div>
+          <div class="pricing-card__tier">Website Starter</div>
           <div class="pricing-card__price"><span>$</span>997</div>
-          <div class="pricing-card__period">one-time</div>
+          <div class="pricing-card__period">starting at</div>
           <ul class="pricing-card__features">
-            <li>✓ Up to 5 pages</li>
-            <li>✓ Mobile responsive</li>
-            <li>✓ Contact form</li>
+            <li>✓ Custom landing page or small website</li>
+            <li>✓ Mobile responsive design</li>
+            <li>✓ Contact or quote form</li>
             <li>✓ Basic SEO setup</li>
-            <li>✓ 30-day support</li>
-            <li class="dim">✗ E-commerce</li>
-            <li class="dim">✗ Custom animations</li>
+            <li>✓ Launch support</li>
           </ul>
-          <a href="#contact" class="btn btn--ghost btn--full">Get Started</a>
+          <a href="#contact" class="btn btn--ghost btn--full">Start With a Site</a>
         </div>
         <div class="pricing-card pricing-card--featured reveal reveal--delay-1">
-          <div class="pricing-card__badge">Most Popular</div>
-          <div class="pricing-card__tier">Professional</div>
+          <div class="pricing-card__badge">Best Fit</div>
+          <div class="pricing-card__tier">Growth System</div>
           <div class="pricing-card__price"><span>$</span>2,497</div>
-          <div class="pricing-card__period">one-time</div>
+          <div class="pricing-card__period">starting at</div>
           <ul class="pricing-card__features">
-            <li>✓ Up to 10 pages</li>
-            <li>✓ Mobile responsive</li>
-            <li>✓ Contact &amp; booking forms</li>
-            <li>✓ Full SEO optimization</li>
-            <li>✓ 90-day support</li>
-            <li>✓ Custom animations</li>
-            <li class="dim">✗ E-commerce</li>
+            <li>✓ Multi-page website or sales funnel</li>
+            <li>✓ Conversion copy and service pages</li>
+            <li>✓ Lead intake form and notifications</li>
+            <li>✓ Tracking for calls and form leads</li>
+            <li>✓ Google-ready landing page structure</li>
           </ul>
-          <a href="#contact" class="btn btn--primary btn--full">Get Started</a>
+          <a href="#contact" class="btn btn--primary btn--full">Build My Growth System</a>
         </div>
         <div class="pricing-card reveal reveal--delay-2">
-          <div class="pricing-card__tier">E-commerce</div>
-          <div class="pricing-card__price"><span>$</span>4,997</div>
-          <div class="pricing-card__period">one-time</div>
+          <div class="pricing-card__tier">Ads + Optimization</div>
+          <div class="pricing-card__price"><span>$</span>750</div>
+          <div class="pricing-card__period">per month, starting at</div>
           <ul class="pricing-card__features">
-            <li>✓ Unlimited pages</li>
-            <li>✓ Full online store</li>
-            <li>✓ Stripe / PayPal payments</li>
-            <li>✓ Product management</li>
-            <li>✓ 6-month support</li>
-            <li>✓ Custom animations</li>
-            <li>✓ Analytics dashboard</li>
+            <li>✓ Google or social ad campaign setup</li>
+            <li>✓ Landing page improvements</li>
+            <li>✓ Monthly reporting</li>
+            <li>✓ Lead quality review</li>
+            <li>✓ Ongoing tests and updates</li>
           </ul>
-          <a href="#contact" class="btn btn--ghost btn--full">Get Started</a>
+          <a href="#contact" class="btn btn--ghost btn--full">Grow With Ads</a>
         </div>
       </div>
-      <p class="pricing-note reveal">All plans include free domain setup, SSL certificate, and speed optimization. <a href="#contact">Need something custom?</a></p>
+      <p class="pricing-note reveal">Every project starts with a free growth demo so you can see the direction before moving forward.</p>
     </div>
   </section>
 
-  <!-- CTA BANNER -->
   <section class="cta-banner reveal">
     <div class="container">
       <div class="cta-banner__inner">
         <div>
-          <h2>Ready to Get Your Website?</h2>
-          <p>Pick a style above and message us. We'll handle everything else.</p>
+          <h2>Want to See What We Would Build?</h2>
+          <p>Send your business, website, and goals. We will come back with a clear growth demo.</p>
         </div>
-        <a href="#contact" class="btn btn--primary btn--lg">Start For Free</a>
+        <a href="#contact" class="btn btn--primary btn--lg">Get a Free Demo</a>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section class="section" id="contact">
     <div class="container">
       <div class="contact-grid">
         <div class="contact__info reveal">
           <span class="section-tag">Get in Touch</span>
-          <h2 class="section-title">Let's Build<br />Your Website</h2>
-          <p class="contact__text">Tell us which style caught your eye (or describe your vision) and we'll get back to you within a few hours with a plan and a quote.</p>
+          <h2 class="section-title">Let's Build<br />Your Next Lead System.</h2>
+          <p class="contact__text">Tell us what your business does, where you want more customers from, and whether you need a website, ads, or a complete lead system. We will reply with the next best move.</p>
           <div class="contact__details">
             <div class="contact__detail">
-              <div class="contact__detail-icon">
-                <svg viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.95 10.5 19.79 19.79 0 01.88 1.87 2 2 0 012.86 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </div>
-              <div><strong>Phone</strong><span>1-800-LANDMARK</span></div>
-            </div>
-            <div class="contact__detail">
-              <div class="contact__detail-icon">
-                <svg viewBox="0 0 24 24" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </div>
+              <div class="contact__detail-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
               <div><strong>Email</strong><span>hello@landmarkdigital.com</span></div>
             </div>
             <div class="contact__detail">
-              <div class="contact__detail-icon">
-                <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/><polyline points="12,6 12,12 16,14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </div>
-              <div><strong>Response Time</strong><span>Within 2–4 hours</span></div>
+              <div class="contact__detail-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/><polyline points="12,6 12,12 16,14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div><strong>Response Time</strong><span>Within a few hours</span></div>
+            </div>
+            <div class="contact__detail">
+              <div class="contact__detail-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 19V5m0 14h16M8 16v-5m4 5V8m4 8v-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div><strong>First Step</strong><span>Free growth demo or website plan</span></div>
             </div>
           </div>
         </div>
@@ -685,22 +277,20 @@
               <input type="text" id="business" placeholder="Your Company" />
             </div>
             <div class="form-group">
-              <label for="style">Website Style You Like</label>
+              <label for="website">Current Website</label>
+              <input type="text" id="website" placeholder="yourwebsite.com" />
+            </div>
+            <div class="form-group">
+              <label for="style">What do you need?</label>
               <select id="style">
-                <option value="">Select a style...</option>
-                <option>Fine Dining / Restaurant</option>
-                <option>Online Store / E-commerce</option>
-                <option>Real Estate Agency</option>
-                <option>Law Firm</option>
-                <option>Gym / Fitness Studio</option>
-                <option>Photography Portfolio</option>
-                <option>Medical / Clinic</option>
-                <option>SaaS / Tech Startup</option>
-                <option>Moving Company</option>
-                <option>Creative Agency</option>
-                <option>Hotel / Hospitality</option>
-                <option>Personal Brand</option>
-                <option>Something custom...</option>
+                <option value="">Select one...</option>
+                <option>New website</option>
+                <option>Website redesign</option>
+                <option>Google ads</option>
+                <option>Facebook / Instagram ads</option>
+                <option>Landing page</option>
+                <option>Lead dashboard or CRM</option>
+                <option>Complete website + ads + lead system</option>
               </select>
             </div>
             <div class="form-group">
@@ -708,64 +298,65 @@
               <select id="budget">
                 <option value="">Select a range...</option>
                 <option>Under $1,000</option>
-                <option>$1,000 – $2,500</option>
-                <option>$2,500 – $5,000</option>
+                <option>$1,000 - $2,500</option>
+                <option>$2,500 - $5,000</option>
                 <option>$5,000+</option>
+                <option>Monthly marketing support</option>
               </select>
             </div>
             <div class="form-group">
-              <label for="message">Tell Us About Your Project</label>
-              <textarea id="message" rows="3" placeholder="What does your business do? What do you need your website to accomplish?"></textarea>
+              <label for="message">Tell Us About Your Goal</label>
+              <textarea id="message" rows="3" placeholder="What do you sell? Who do you want more leads from? What should your website or ads help people do?"></textarea>
             </div>
-            <button type="submit" class="btn btn--primary btn--full">Send My Project Details</button>
+            <button type="submit" class="btn btn--primary btn--full">Send My Growth Demo Request</button>
           </form>
           <div class="form-success" id="formSuccess">
             <div class="form-success__icon">✓</div>
             <h3>We Got It!</h3>
-            <p>Expect a reply within a few hours. We're excited to build something great for you.</p>
+            <p>Expect a reply within a few hours. We will review your business and map the best next step.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
       <div class="footer__top">
         <div class="footer__brand">
-          <a href="#" class="nav__logo"><span class="nav__logo-mark">W</span><span>Landmark Digital</span></a>
-          <p>Premium website design for businesses ready to stand out. Fast, beautiful, and built to convert.</p>
+          <a href="#" class="nav__logo"><span class="nav__logo-mark">L</span><span>Landmark Digital</span></a>
+          <p>Websites, ads, and lead systems for businesses that want more qualified inquiries and cleaner follow-up.</p>
         </div>
         <div class="footer__links-group">
-          <h4>Styles</h4>
+          <h4>Services</h4>
           <ul>
-            <li><a href="#showcase">Restaurant</a></li>
-            <li><a href="#showcase">E-commerce</a></li>
-            <li><a href="#showcase">Real Estate</a></li>
-            <li><a href="#showcase">SaaS</a></li>
+            <li><a href="#services">Websites</a></li>
+            <li><a href="#services">Ad Marketing</a></li>
+            <li><a href="#services">Lead Systems</a></li>
+            <li><a href="#pricing">Pricing</a></li>
           </ul>
         </div>
         <div class="footer__links-group">
           <h4>Company</h4>
           <ul>
-            <li><a href="#process">Our Process</a></li>
-            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#industries">Who We Help</a></li>
+            <li><a href="#process">Process</a></li>
             <li><a href="#contact">Contact</a></li>
-            <li><a href="#">Portfolio</a></li>
+            <li><a href="#contact">Free Demo</a></li>
           </ul>
         </div>
         <div class="footer__links-group">
-          <h4>Legal</h4>
+          <h4>Growth Focus</h4>
           <ul>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#contact">More calls</a></li>
+            <li><a href="#contact">Better quote requests</a></li>
+            <li><a href="#contact">Lead tracking</a></li>
           </ul>
         </div>
       </div>
       <div class="footer__bottom">
         <p>&copy; 2026 Landmark Digital. All rights reserved.</p>
-        <p>Designed &amp; Built with care.</p>
+        <p>Designed and built for growth.</p>
       </div>
     </div>
   </footer>
