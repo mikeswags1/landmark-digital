@@ -1,99 +1,97 @@
-/* ============================================
-   WEBCRAFT STUDIO — JS
-   ============================================ */
+/* =====================================================
+   LANDMARK DIGITAL — JS
+   ===================================================== */
 
-// ── Nav scroll ────────────────────────────────
+// Nav: scrolled state
 const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 40);
-}, { passive: true });
+if (nav) {
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 24);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+}
 
-// ── Mobile menu ───────────────────────────────
+// Mobile menu toggle
 const burger = document.getElementById('burger');
 const mobileMenu = document.getElementById('mobileMenu');
-burger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
-document.querySelectorAll('.nav__mobile-link, .nav__mobile .btn').forEach(el =>
-  el.addEventListener('click', () => mobileMenu.classList.remove('open'))
-);
-
-// ── Reveal on scroll ──────────────────────────
-const revealObs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); }
-  });
-}, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
-document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
-
-// ── Counter animation ─────────────────────────
-function animateCounter(el, target, dur = 1600) {
-  const start = performance.now();
-  const update = now => {
-    const p = Math.min((now - start) / dur, 1);
-    const eased = 1 - Math.pow(1 - p, 3);
-    el.textContent = target >= 100 ? Math.floor(eased * target).toLocaleString() : Math.floor(eased * target);
-    if (p < 1) requestAnimationFrame(update);
-    else el.textContent = target >= 100 ? target.toLocaleString() : target;
+if (burger && mobileMenu) {
+  const setOpen = (open) => {
+    burger.setAttribute('aria-expanded', String(open));
+    if (open) {
+      mobileMenu.removeAttribute('hidden');
+      requestAnimationFrame(() => mobileMenu.classList.add('open'));
+    } else {
+      mobileMenu.classList.remove('open');
+      mobileMenu.setAttribute('hidden', '');
+    }
   };
-  requestAnimationFrame(update);
-}
-const statsObs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (!e.isIntersecting) return;
-    e.target.querySelectorAll('.stat__num[data-target]').forEach(el => {
-      animateCounter(el, parseInt(el.dataset.target, 10));
-      el.removeAttribute('data-target');
-    });
-    statsObs.unobserve(e.target);
+  burger.addEventListener('click', () => {
+    const open = burger.getAttribute('aria-expanded') !== 'true';
+    setOpen(open);
   });
-}, { threshold: 0.5 });
-const heroStats = document.querySelector('.hero__stats');
-if (heroStats) statsObs.observe(heroStats);
+  mobileMenu.querySelectorAll('a').forEach((a) =>
+    a.addEventListener('click', () => setOpen(false))
+  );
+}
 
-// ── Smooth scroll ─────────────────────────────
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
+// Reveal on scroll
+const revealObs = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        revealObs.unobserve(e.target);
+      }
+    });
+  },
+  { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+);
+document.querySelectorAll('.reveal').forEach((el) => revealObs.observe(el));
+
+// Smooth scroll for in-page anchors (offset for fixed nav)
+document.querySelectorAll('a[href^="#"]').forEach((a) => {
+  a.addEventListener('click', (e) => {
     const id = a.getAttribute('href');
-    if (id === '#') return;
+    if (!id || id === '#') return;
     const el = document.querySelector(id);
     if (!el) return;
     e.preventDefault();
-    const top = el.getBoundingClientRect().top + window.scrollY - nav.offsetHeight - 16;
+    const top = el.getBoundingClientRect().top + window.scrollY - (nav?.offsetHeight || 0) - 12;
     window.scrollTo({ top, behavior: 'smooth' });
   });
 });
 
-// ── Filter tabs ───────────────────────────────
-const filterBtns = document.querySelectorAll('.filter-btn');
-const siteCards  = document.querySelectorAll('.site-card');
-
-filterBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    filterBtns.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const filter = btn.dataset.filter;
-    siteCards.forEach(card => {
-      const match = filter === 'all' || card.dataset.category === filter;
-      card.classList.toggle('hidden', !match);
-      // re-trigger reveal for newly shown cards
-      if (match && !card.classList.contains('visible')) {
-        setTimeout(() => card.classList.add('visible'), 50);
-      }
-    });
-  });
-});
-
-// ── Contact form ──────────────────────────────
+// Contact form: POST to /api/contact, fallback to optimistic success
 const form = document.getElementById('contactForm');
 const success = document.getElementById('formSuccess');
-if (form) {
-  form.addEventListener('submit', e => {
+if (form && success) {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const btn = form.querySelector('button[type="submit"]');
-    btn.textContent = 'Sending...';
+    const originalLabel = btn.innerHTML;
     btn.disabled = true;
-    setTimeout(() => {
-      form.style.display = 'none';
-      success.classList.add('visible');
-    }, 900);
+    btn.innerHTML = 'Sending…';
+
+    const data = Object.fromEntries(new FormData(form).entries());
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok && res.status !== 404) throw new Error('Request failed');
+    } catch (_) {
+      // Fall through — show success UX even if endpoint isn't wired yet.
+    }
+
+    form.style.display = 'none';
+    success.removeAttribute('hidden');
+    success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    btn.disabled = false;
+    btn.innerHTML = originalLabel;
   });
 }
+
+// Footer year
+const yearEl = document.getElementById('year');
+if (yearEl) yearEl.textContent = new Date().getFullYear();

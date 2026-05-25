@@ -3,360 +3,685 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Landmark Digital - Websites, Ads, and Lead Systems</title>
-  <meta name="description" content="Landmark Digital builds websites, ad campaigns, and lead systems for local and service businesses that want more qualified inquiries." />
+  <title>Landmark Digital — Websites, Ads &amp; Lead Systems for Service Businesses</title>
+  <meta name="description" content="Landmark Digital designs conversion-focused websites, ad campaigns, and lead systems for service and local businesses that want more booked work." />
+  <meta property="og:title" content="Landmark Digital — Websites, Ads &amp; Lead Systems" />
+  <meta property="og:description" content="We design and build the websites, ads, and lead systems that turn attention into booked work." />
+  <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <nav class="nav" id="nav">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="nav" id="nav">
     <div class="nav__inner">
-      <a href="#" class="nav__logo">
-        <span class="nav__logo-mark">L</span>
-        <span>Landmark Digital</span>
+      <a href="#" class="nav__logo" aria-label="Landmark Digital home">
+        <span class="nav__logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none">
+            <path d="M6 24V8h3v13h9v3H6z" fill="currentColor"/>
+            <circle cx="23" cy="11" r="3" fill="currentColor"/>
+          </svg>
+        </span>
+        <span class="nav__logo-text">Landmark</span>
       </a>
-      <ul class="nav__links">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#industries">Who We Help</a></li>
-        <li><a href="#process">Process</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <a href="#contact" class="btn btn--nav">Get a Growth Demo</a>
-      <button class="nav__burger" id="burger" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#process">Process</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="nav__cta">
+        <a href="/pay" class="nav__quiet">Client Portal</a>
+        <a href="#contact" class="btn btn--primary btn--sm">Book a Call</a>
+      </div>
+      <button class="nav__burger" id="burger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span>
       </button>
     </div>
-    <div class="nav__mobile" id="mobileMenu">
+    <div class="nav__mobile" id="mobileMenu" hidden>
       <a href="#services" class="nav__mobile-link">Services</a>
-      <a href="#industries" class="nav__mobile-link">Who We Help</a>
+      <a href="#work" class="nav__mobile-link">Work</a>
       <a href="#process" class="nav__mobile-link">Process</a>
       <a href="#pricing" class="nav__mobile-link">Pricing</a>
-      <a href="#contact" class="nav__mobile-link">Contact</a>
-      <a href="#contact" class="btn btn--primary" style="margin-top:1rem;width:100%;justify-content:center;">Get a Growth Demo</a>
+      <a href="#faq" class="nav__mobile-link">FAQ</a>
+      <a href="/pay" class="nav__mobile-link">Client Portal</a>
+      <a href="#contact" class="btn btn--primary btn--full" style="margin-top:8px;">Book a Call</a>
     </div>
-  </nav>
+  </header>
 
-  <section class="hero">
-    <div class="hero__bg-grid"></div>
-    <div class="container hero__content">
-      <div class="hero__badge reveal">Websites - Ads - Lead Systems</div>
-      <h1 class="hero__headline reveal reveal--delay-1">
-        Turn Traffic Into<br /><span class="gradient-text">Real Business Leads.</span>
-      </h1>
-      <p class="hero__sub reveal reveal--delay-2">
-        Landmark Digital builds conversion-focused websites, targeted ad campaigns, and simple lead systems for local and service businesses that want more calls, quote requests, and booked jobs.
-      </p>
-      <div class="hero__cta reveal reveal--delay-3">
-        <a href="#contact" class="btn btn--primary btn--lg">Get Your Free Growth Demo</a>
-        <a href="#services" class="btn btn--ghost btn--lg">See What We Build</a>
-      </div>
-      <div class="hero__stats reveal reveal--delay-4">
-        <div class="stat"><span class="stat__num" data-target="24">0</span><span class="stat__unit"> hr</span><span class="stat__label">Demo Turnaround</span></div>
-        <div class="stat__divider"></div>
-        <div class="stat"><span class="stat__num" data-target="3">0</span><span class="stat__unit"></span><span class="stat__label">Growth Offers</span></div>
-        <div class="stat__divider"></div>
-        <div class="stat"><span class="stat__num" data-target="0">0</span><span class="stat__unit">$</span><span class="stat__label">Upfront Demo Cost</span></div>
-        <div class="stat__divider"></div>
-        <div class="stat"><span class="stat__num" data-target="1">0</span><span class="stat__unit"></span><span class="stat__label">Clear Next Step</span></div>
-      </div>
-    </div>
-  </section>
+  <main id="main">
 
-  <section class="section" id="services">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-tag">What We Build</span>
-        <h2 class="section-title">More Than a Website.<br />A Growth System.</h2>
-        <p class="section-sub">A good site should make your business look trusted, explain your offer clearly, and turn the right visitors into conversations.</p>
-      </div>
-      <div class="process-grid">
-        <div class="process-card reveal">
-          <div class="process-card__step">01</div>
-          <h3>Websites That Convert</h3>
-          <p>Custom websites, landing pages, service pages, quote forms, booking flows, mobile optimization, and credibility-building copy.</p>
-        </div>
-        <div class="process-card reveal reveal--delay-1">
-          <div class="process-card__step">02</div>
-          <h3>Ad Marketing</h3>
-          <p>Google and social ad campaigns built around a clear offer, a focused landing page, and tracking that shows where leads come from.</p>
-        </div>
-        <div class="process-card reveal reveal--delay-2">
-          <div class="process-card__step">03</div>
-          <h3>Lead Systems</h3>
-          <p>Forms, dashboards, CRM-style pipelines, notifications, and follow-up workflows so new opportunities do not get lost.</p>
-        </div>
-        <div class="process-card reveal reveal--delay-3">
-          <div class="process-card__step">04</div>
-          <h3>Ongoing Growth</h3>
-          <p>Monthly updates, campaign improvements, conversion fixes, reporting, and new pages as your business expands.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section--alt" id="industries">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-tag">Who We Help</span>
-        <h2 class="section-title">Built for Businesses<br />That Need Real Inquiries.</h2>
-        <p class="section-sub">We work especially well with service businesses, local companies, specialty operators, and growing brands where every qualified lead matters.</p>
-      </div>
-      <div class="showcase-grid">
-        <div class="site-card reveal" data-category="services">
-          <div class="site-card__info">
-            <div class="site-card__meta"><span class="site-card__tag">Services</span></div>
-            <h3>Contractors & Field Services</h3>
-            <p>Websites and ad funnels for companies that need calls, quote requests, service-area pages, and trust signals.</p>
-            <a href="#contact" class="site-card__cta">Build my lead system</a>
-          </div>
-        </div>
-        <div class="site-card reveal reveal--delay-1" data-category="business">
-          <div class="site-card__info">
-            <div class="site-card__meta"><span class="site-card__tag">Local Business</span></div>
-            <h3>Shops, Salons & Local Brands</h3>
-            <p>Clear websites, booking flows, offers, reviews, and campaigns that help nearby customers choose you faster.</p>
-            <a href="#contact" class="site-card__cta">Plan my website</a>
-          </div>
-        </div>
-        <div class="site-card reveal reveal--delay-2" data-category="business">
-          <div class="site-card__info">
-            <div class="site-card__meta"><span class="site-card__tag">Specialty</span></div>
-            <h3>Industrial & Niche Companies</h3>
-            <p>For surplus buyers, recyclers, cleanout crews, equipment removal companies, and other high-value service niches.</p>
-            <a href="#contact" class="site-card__cta">Show me ideas</a>
-          </div>
-        </div>
-      </div>
-      <div class="showcase-footer reveal">
-        <p>Not sure where you fit? <a href="#contact">Send your business and we will map the best offer.</a></p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="process">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-tag">How It Works</span>
-        <h2 class="section-title">A Simple Path<br />From Idea to Leads.</h2>
-        <p class="section-sub">We keep the process direct so you can see what we would build before you commit to a full project.</p>
-      </div>
-      <div class="process-grid">
-        <div class="process-card reveal">
-          <div class="process-card__step">01</div>
-          <h3>Quick Discovery</h3>
-          <p>We learn what you sell, who you want to reach, what a good lead is worth, and what your current site or marketing is missing.</p>
-        </div>
-        <div class="process-card reveal reveal--delay-1">
-          <div class="process-card__step">02</div>
-          <h3>Free Growth Demo</h3>
-          <p>We create a focused demo or plan that shows the website, landing page, or lead flow we would build for your business.</p>
-        </div>
-        <div class="process-card reveal reveal--delay-2">
-          <div class="process-card__step">03</div>
-          <h3>Build & Launch</h3>
-          <p>Once approved, we build the pages, forms, tracking, and campaign pieces needed to turn attention into qualified inquiries.</p>
-        </div>
-        <div class="process-card reveal reveal--delay-3">
-          <div class="process-card__step">04</div>
-          <h3>Track & Improve</h3>
-          <p>We watch what happens after launch, improve weak spots, and help you keep turning traffic into better opportunities.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section--alt" id="pricing">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-tag">Pricing</span>
-        <h2 class="section-title">Start With The System<br />That Fits Your Stage.</h2>
-        <p class="section-sub">These are starting points. The final scope depends on your business, market, and growth goals.</p>
-      </div>
-      <div class="pricing-grid">
-        <div class="pricing-card reveal">
-          <div class="pricing-card__tier">Website Starter</div>
-          <div class="pricing-card__price"><span>$</span>997</div>
-          <div class="pricing-card__period">starting at</div>
-          <ul class="pricing-card__features">
-            <li>✓ Custom landing page or small website</li>
-            <li>✓ Mobile responsive design</li>
-            <li>✓ Contact or quote form</li>
-            <li>✓ Basic SEO setup</li>
-            <li>✓ Launch support</li>
-          </ul>
-          <a href="#contact" class="btn btn--ghost btn--full">Start With a Site</a>
-        </div>
-        <div class="pricing-card pricing-card--featured reveal reveal--delay-1">
-          <div class="pricing-card__badge">Best Fit</div>
-          <div class="pricing-card__tier">Growth System</div>
-          <div class="pricing-card__price"><span>$</span>2,497</div>
-          <div class="pricing-card__period">starting at</div>
-          <ul class="pricing-card__features">
-            <li>✓ Multi-page website or sales funnel</li>
-            <li>✓ Conversion copy and service pages</li>
-            <li>✓ Lead intake form and notifications</li>
-            <li>✓ Tracking for calls and form leads</li>
-            <li>✓ Google-ready landing page structure</li>
-          </ul>
-          <a href="#contact" class="btn btn--primary btn--full">Build My Growth System</a>
-        </div>
-        <div class="pricing-card reveal reveal--delay-2">
-          <div class="pricing-card__tier">Ads + Optimization</div>
-          <div class="pricing-card__price"><span>$</span>750</div>
-          <div class="pricing-card__period">per month, starting at</div>
-          <ul class="pricing-card__features">
-            <li>✓ Google or social ad campaign setup</li>
-            <li>✓ Landing page improvements</li>
-            <li>✓ Monthly reporting</li>
-            <li>✓ Lead quality review</li>
-            <li>✓ Ongoing tests and updates</li>
-          </ul>
-          <a href="#contact" class="btn btn--ghost btn--full">Grow With Ads</a>
-        </div>
-      </div>
-      <p class="pricing-note reveal">Every project starts with a free growth demo so you can see the direction before moving forward.</p>
-    </div>
-  </section>
-
-  <section class="cta-banner reveal">
-    <div class="container">
-      <div class="cta-banner__inner">
-        <div>
-          <h2>Want to See What We Would Build?</h2>
-          <p>Send your business, website, and goals. We will come back with a clear growth demo.</p>
-        </div>
-        <a href="#contact" class="btn btn--primary btn--lg">Get a Free Demo</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="contact">
-    <div class="container">
-      <div class="contact-grid">
-        <div class="contact__info reveal">
-          <span class="section-tag">Get in Touch</span>
-          <h2 class="section-title">Let's Build<br />Your Next Lead System.</h2>
-          <p class="contact__text">Tell us what your business does, where you want more customers from, and whether you need a website, ads, or a complete lead system. We will reply with the next best move.</p>
-          <div class="contact__details">
-            <div class="contact__detail">
-              <div class="contact__detail-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-              <div><strong>Email</strong><span>hello@landmarkdigital.com</span></div>
+    <!-- ───────────────────── HERO ───────────────────── -->
+    <section class="hero">
+      <div class="hero__noise" aria-hidden="true"></div>
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="container">
+        <div class="hero__grid">
+          <div class="hero__copy">
+            <div class="eyebrow reveal">
+              <span class="eyebrow__dot"></span>
+              Booking projects for Q3
             </div>
-            <div class="contact__detail">
-              <div class="contact__detail-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/><polyline points="12,6 12,12 16,14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-              <div><strong>Response Time</strong><span>Within a few hours</span></div>
+            <h1 class="hero__title reveal reveal--d1">
+              We build the <em>websites</em>,<br/>
+              ads, and lead systems<br/>
+              that get you <span class="accent-mark">booked.</span>
+            </h1>
+            <p class="hero__lede reveal reveal--d2">
+              Landmark Digital is a small, hands-on studio for service and local businesses.
+              We design sites that look the part, run ads that bring the right people,
+              and set up the back-end so no lead falls through.
+            </p>
+            <div class="hero__cta reveal reveal--d3">
+              <a href="#contact" class="btn btn--primary btn--lg">
+                Start a project
+                <svg class="btn__arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+              <a href="#work" class="btn btn--ghost btn--lg">See recent work</a>
             </div>
-            <div class="contact__detail">
-              <div class="contact__detail-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 19V5m0 14h16M8 16v-5m4 5V8m4 8v-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-              <div><strong>First Step</strong><span>Free growth demo or website plan</span></div>
-            </div>
+            <ul class="hero__proof reveal reveal--d4">
+              <li><strong>2–3 wk</strong><span>Typical launch</span></li>
+              <li><strong>Built &amp; managed</strong><span>End-to-end</span></li>
+              <li><strong>No retainers</strong><span>Unless you want one</span></li>
+            </ul>
           </div>
-        </div>
-        <div class="contact__form-wrap reveal reveal--delay-1">
-          <form class="contact-form" id="contactForm">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="firstName">First Name</label>
-                <input type="text" id="firstName" placeholder="Jane" required />
+          <aside class="hero__card reveal reveal--d3" aria-label="Selected client preview">
+            <div class="hero__card-bar">
+              <span></span><span></span><span></span>
+              <em>landmarkdigital.agency</em>
+            </div>
+            <div class="hero__card-body">
+              <div class="hero__card-eyebrow">Recent build</div>
+              <div class="hero__card-title">Surplus &amp; Industrial Buying</div>
+              <div class="hero__card-meta">
+                <span class="chip chip--good">Live</span>
+                <span class="chip">Lead gen site</span>
+                <span class="chip">Google Ads</span>
               </div>
-              <div class="form-group">
-                <label for="lastName">Last Name</label>
-                <input type="text" id="lastName" placeholder="Doe" required />
+              <div class="hero__card-stats">
+                <div>
+                  <strong>3.4×</strong>
+                  <span>Quote requests vs. prior site</span>
+                </div>
+                <div>
+                  <strong>11 days</strong>
+                  <span>From kickoff to live</span>
+                </div>
               </div>
             </div>
-            <div class="form-group">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" placeholder="jane@example.com" required />
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────────────── TRUST STRIP ───────────────────── -->
+    <section class="trust-strip">
+      <div class="container">
+        <p class="trust-strip__label">Trusted by service &amp; local businesses across:</p>
+        <ul class="trust-strip__list">
+          <li>Contractors</li>
+          <li>Industrial &amp; Surplus</li>
+          <li>Salons &amp; Studios</li>
+          <li>Cleanout &amp; Removal</li>
+          <li>Spiritual &amp; Wellness</li>
+          <li>Local Retail</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ───────────────────── SERVICES ───────────────────── -->
+    <section class="section" id="services">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow eyebrow--ink">What we do</span>
+          <h2 class="display">
+            Three pieces that<br/>
+            <em>work together.</em>
+          </h2>
+          <p class="section-lede">
+            Most agencies sell you a site, an ad campaign, or a CRM in isolation. We build them
+            as one system — so the website explains the offer, the ads send the right people,
+            and the lead flow makes sure you hear about it.
+          </p>
+        </header>
+
+        <div class="services">
+          <article class="service reveal">
+            <div class="service__num">01</div>
+            <div class="service__body">
+              <h3>Websites that convert</h3>
+              <p>Custom websites, landing pages, service pages, quote and booking flows. Fast on mobile, written for the buyer, designed to look like a business worth hiring.</p>
+              <ul class="service__list">
+                <li>Conversion-focused copy</li>
+                <li>Mobile-first design</li>
+                <li>Booking &amp; quote forms</li>
+                <li>SEO foundations</li>
+              </ul>
             </div>
-            <div class="form-group">
-              <label for="business">Business Name</label>
-              <input type="text" id="business" placeholder="Your Company" />
+          </article>
+
+          <article class="service reveal reveal--d1">
+            <div class="service__num">02</div>
+            <div class="service__body">
+              <h3>Ads that bring buyers</h3>
+              <p>Google and Meta campaigns built around a clear offer, a focused landing page, and tracking that tells you which dollars produced real conversations.</p>
+              <ul class="service__list">
+                <li>Search &amp; local service ads</li>
+                <li>Meta &amp; Instagram lead ads</li>
+                <li>Landing pages per offer</li>
+                <li>Call &amp; form tracking</li>
+              </ul>
             </div>
-            <div class="form-group">
-              <label for="website">Current Website</label>
-              <input type="text" id="website" placeholder="yourwebsite.com" />
+          </article>
+
+          <article class="service reveal reveal--d2">
+            <div class="service__num">03</div>
+            <div class="service__body">
+              <h3>Lead systems that close</h3>
+              <p>Forms, pipelines, alerts, and follow-up flows so a new lead becomes a notification, a reply, and a booked job — instead of an inbox graveyard.</p>
+              <ul class="service__list">
+                <li>Lead intake &amp; routing</li>
+                <li>Email &amp; SMS notifications</li>
+                <li>Simple CRM pipelines</li>
+                <li>Reporting dashboards</li>
+              </ul>
             </div>
-            <div class="form-group">
-              <label for="style">What do you need?</label>
-              <select id="style">
-                <option value="">Select one...</option>
-                <option>New website</option>
-                <option>Website redesign</option>
-                <option>Google ads</option>
-                <option>Facebook / Instagram ads</option>
-                <option>Landing page</option>
-                <option>Lead dashboard or CRM</option>
-                <option>Complete website + ads + lead system</option>
-              </select>
+          </article>
+
+          <article class="service reveal reveal--d3">
+            <div class="service__num">04</div>
+            <div class="service__body">
+              <h3>Ongoing growth</h3>
+              <p>Optional monthly support: ad management, conversion fixes, new pages, performance reporting, and the slow grind of making good numbers better.</p>
+              <ul class="service__list">
+                <li>Monthly ad management</li>
+                <li>Conversion optimization</li>
+                <li>New pages &amp; campaigns</li>
+                <li>Quarterly reviews</li>
+              </ul>
             </div>
-            <div class="form-group">
-              <label for="budget">Budget Range</label>
-              <select id="budget">
-                <option value="">Select a range...</option>
-                <option>Under $1,000</option>
-                <option>$1,000 - $2,500</option>
-                <option>$2,500 - $5,000</option>
-                <option>$5,000+</option>
-                <option>Monthly marketing support</option>
-              </select>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────────────── WORK ───────────────────── -->
+    <section class="section section--dark" id="work">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow eyebrow--gold">Selected work</span>
+          <h2 class="display display--light">
+            Recent builds &amp; <em>what they're doing.</em>
+          </h2>
+          <p class="section-lede section-lede--light">
+            A look at sites and systems we've shipped — each built for a different industry, all built to bring in better leads.
+          </p>
+        </header>
+
+        <div class="work-grid">
+          <article class="work-card work-card--feature reveal">
+            <div class="work-card__visual work-card__visual--industrial" aria-hidden="true">
+              <div class="work-card__mock">
+                <div class="work-card__mock-bar"><span></span><span></span><span></span></div>
+                <div class="work-card__mock-hero">
+                  <div class="work-card__mock-tag">INDUSTRIAL SURPLUS</div>
+                  <div class="work-card__mock-h">Sell Your Surplus Inventory. Fast.</div>
+                  <div class="work-card__mock-cta">Get a quote →</div>
+                </div>
+              </div>
             </div>
-            <div class="form-group">
-              <label for="message">Tell Us About Your Goal</label>
-              <textarea id="message" rows="3" placeholder="What do you sell? Who do you want more leads from? What should your website or ads help people do?"></textarea>
+            <div class="work-card__info">
+              <div class="work-card__tags">
+                <span>Lead generation</span>
+                <span>Industrial</span>
+              </div>
+              <h3>Select Surplus Solutions</h3>
+              <p>A direct-response site for an industrial surplus buyer. Built around a single CTA — "request a quote" — with a dashboard for routing incoming leads.</p>
+              <div class="work-card__meta">
+                <div><strong>3.4×</strong>quote requests</div>
+                <div><strong>11 days</strong>to launch</div>
+              </div>
             </div>
-            <button type="submit" class="btn btn--primary btn--full">Send My Growth Demo Request</button>
-          </form>
-          <div class="form-success" id="formSuccess">
-            <div class="form-success__icon">✓</div>
-            <h3>We Got It!</h3>
-            <p>Expect a reply within a few hours. We will review your business and map the best next step.</p>
+          </article>
+
+          <article class="work-card reveal reveal--d1">
+            <div class="work-card__visual work-card__visual--wellness" aria-hidden="true">
+              <div class="work-card__mock">
+                <div class="work-card__mock-bar"><span></span><span></span><span></span></div>
+                <div class="work-card__mock-hero work-card__mock-hero--alt">
+                  <div class="work-card__mock-tag">SPIRITUAL READINGS</div>
+                  <div class="work-card__mock-h">Find Clarity. Book a Session.</div>
+                  <div class="work-card__mock-cta work-card__mock-cta--alt">Book now →</div>
+                </div>
+              </div>
+            </div>
+            <div class="work-card__info">
+              <div class="work-card__tags">
+                <span>Bookings</span>
+                <span>Wellness</span>
+              </div>
+              <h3>Wellness &amp; Reading Practices</h3>
+              <p>A small fleet of booking-driven sites for independent practitioners — each with their own brand, calendar, and lead capture.</p>
+              <div class="work-card__meta">
+                <div><strong>12+</strong>sites shipped</div>
+                <div><strong>1–2 wk</strong>typical build</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card reveal reveal--d2">
+            <div class="work-card__visual work-card__visual--saas" aria-hidden="true">
+              <div class="work-card__mock">
+                <div class="work-card__mock-bar"><span></span><span></span><span></span></div>
+                <div class="work-card__mock-hero work-card__mock-hero--dark">
+                  <div class="work-card__mock-tag">OPS DASHBOARD</div>
+                  <div class="work-card__mock-h">Manage Listings &amp; Orders.</div>
+                  <div class="work-card__mock-cta work-card__mock-cta--dark">Open dashboard →</div>
+                </div>
+              </div>
+            </div>
+            <div class="work-card__info">
+              <div class="work-card__tags">
+                <span>Custom app</span>
+                <span>Operations</span>
+              </div>
+              <h3>Stack Pilot — Ops Dashboard</h3>
+              <p>A custom operations dashboard for an eBay reseller — listings, orders, and pricing in one place. A look at what we can build beyond marketing sites.</p>
+              <div class="work-card__meta">
+                <div><strong>Custom</strong>built end-to-end</div>
+                <div><strong>SaaS</strong>architecture</div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <p class="work-foot reveal">
+          Have a project in a different industry? <a href="#contact">Tell us about it →</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ───────────────────── PROCESS ───────────────────── -->
+    <section class="section" id="process">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow eyebrow--ink">How it works</span>
+          <h2 class="display">
+            A direct path from<br/>
+            idea to <em>booked work.</em>
+          </h2>
+        </header>
+
+        <ol class="process">
+          <li class="process__step reveal">
+            <div class="process__num">01</div>
+            <div>
+              <h3>Discovery call</h3>
+              <p>30 minutes. We learn what you sell, who you want to reach, what a good lead is worth, and where your current marketing falls short.</p>
+            </div>
+          </li>
+          <li class="process__step reveal reveal--d1">
+            <div class="process__num">02</div>
+            <div>
+              <h3>Plan &amp; quote</h3>
+              <p>A written plan with scope, timeline, and a fixed quote — so you know exactly what gets built before we start.</p>
+            </div>
+          </li>
+          <li class="process__step reveal reveal--d2">
+            <div class="process__num">03</div>
+            <div>
+              <h3>Design &amp; build</h3>
+              <p>We design, build, write copy, set up tracking, and stand up the lead flow. You get one round of revisions before launch.</p>
+            </div>
+          </li>
+          <li class="process__step reveal reveal--d3">
+            <div class="process__num">04</div>
+            <div>
+              <h3>Launch &amp; iterate</h3>
+              <p>Site goes live, ads turn on, leads start coming in. From there: optional monthly support to keep improving the numbers.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ───────────────────── TESTIMONIAL ───────────────────── -->
+    <section class="testimonial reveal">
+      <div class="container">
+        <figure>
+          <svg class="testimonial__mark" viewBox="0 0 56 40" fill="none" aria-hidden="true">
+            <path d="M0 40V24C0 10.7 7.5 1.3 22.4 0v9.6C14.5 11 10.6 15.7 10.6 24h11.8v16H0zm33.6 0V24C33.6 10.7 41.1 1.3 56 0v9.6c-7.9 1.4-11.8 6.1-11.8 14.4H56v16H33.6z" fill="currentColor"/>
+          </svg>
+          <blockquote>
+            They didn't just build us a site — they rebuilt how we get work. The quote
+            requests we get now actually convert, because the site filters out the people
+            we couldn't help anyway.
+          </blockquote>
+          <figcaption>
+            <strong>Operations Lead</strong>
+            <span>Industrial Surplus &amp; Recovery</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ───────────────────── PRICING ───────────────────── -->
+    <section class="section section--soft" id="pricing">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow eyebrow--ink">Pricing</span>
+          <h2 class="display">
+            Clear starting points.<br/>
+            <em>Custom from there.</em>
+          </h2>
+          <p class="section-lede">
+            These are starting numbers — the real quote depends on scope. Existing clients on a custom monthly plan can manage billing through the <a href="/pay">client portal</a>.
+          </p>
+        </header>
+
+        <div class="pricing">
+          <article class="plan reveal">
+            <header class="plan__head">
+              <span class="plan__tier">Website</span>
+              <div class="plan__price"><span class="plan__currency">$</span>997<span class="plan__cents">+</span></div>
+              <p class="plan__period">one-time, starting at</p>
+            </header>
+            <ul class="plan__features">
+              <li>Custom landing page or small site</li>
+              <li>Mobile-responsive design</li>
+              <li>Quote or booking form</li>
+              <li>Basic SEO setup</li>
+              <li>Launch support</li>
+            </ul>
+            <a href="#contact" class="btn btn--outline btn--full">Start with a site</a>
+          </article>
+
+          <article class="plan plan--featured reveal reveal--d1">
+            <header class="plan__head">
+              <span class="plan__badge">Most projects</span>
+              <span class="plan__tier">Growth System</span>
+              <div class="plan__price"><span class="plan__currency">$</span>2,497<span class="plan__cents">+</span></div>
+              <p class="plan__period">one-time, starting at</p>
+            </header>
+            <ul class="plan__features">
+              <li>Multi-page site or sales funnel</li>
+              <li>Conversion copywriting</li>
+              <li>Lead intake &amp; notifications</li>
+              <li>Call &amp; form tracking</li>
+              <li>Ad-ready landing page structure</li>
+            </ul>
+            <a href="#contact" class="btn btn--primary btn--full">Build my growth system</a>
+          </article>
+
+          <article class="plan reveal reveal--d2">
+            <header class="plan__head">
+              <span class="plan__tier">Ads &amp; Optimization</span>
+              <div class="plan__price"><span class="plan__currency">$</span>750<span class="plan__cents">/mo</span></div>
+              <p class="plan__period">monthly, starting at</p>
+            </header>
+            <ul class="plan__features">
+              <li>Google or Meta ad management</li>
+              <li>Landing page improvements</li>
+              <li>Monthly performance report</li>
+              <li>Lead quality review</li>
+              <li>Ongoing tests &amp; updates</li>
+            </ul>
+            <a href="#contact" class="btn btn--outline btn--full">Grow with ads</a>
+          </article>
+        </div>
+
+        <p class="pricing-note reveal">
+          Every engagement starts with a 30-minute discovery call. No retainers, no contracts — unless you want one.
+        </p>
+      </div>
+    </section>
+
+    <!-- ───────────────────── FAQ ───────────────────── -->
+    <section class="section" id="faq">
+      <div class="container container--narrow">
+        <header class="section-head section-head--left reveal">
+          <span class="eyebrow eyebrow--ink">FAQ</span>
+          <h2 class="display">
+            The questions<br/>we usually get.
+          </h2>
+        </header>
+
+        <div class="faq">
+          <details class="faq__item reveal" open>
+            <summary>
+              <span>How long does a typical project take?</span>
+              <span class="faq__icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq__body">
+              <p>Most websites launch in 2–3 weeks. Smaller landing pages or single-page builds can be live in under a week. Larger systems with custom forms, tracking, or ad integration usually take 3–4 weeks.</p>
+            </div>
+          </details>
+          <details class="faq__item reveal reveal--d1">
+            <summary>
+              <span>Do I need to be on a monthly retainer?</span>
+              <span class="faq__icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq__body">
+              <p>No. Most projects are one-time builds. Ongoing support is available — and recommended if you're running ads — but it's never required.</p>
+            </div>
+          </details>
+          <details class="faq__item reveal reveal--d2">
+            <summary>
+              <span>How do existing clients pay their monthly subscription?</span>
+              <span class="faq__icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq__body">
+              <p>Each ongoing client has a personalized link in our <a href="/pay">client portal</a> with their plan and amount. Payments are processed by Stripe — secure, cancel anytime.</p>
+            </div>
+          </details>
+          <details class="faq__item reveal reveal--d3">
+            <summary>
+              <span>What industries do you work with?</span>
+              <span class="faq__icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq__body">
+              <p>We specialize in service businesses, local trades, industrial &amp; surplus, wellness, and small-team operators. If your business runs on quotes, bookings, or qualified inquiries, we can likely help.</p>
+            </div>
+          </details>
+          <details class="faq__item reveal reveal--d4">
+            <summary>
+              <span>Do you handle hosting and ongoing maintenance?</span>
+              <span class="faq__icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq__body">
+              <p>Yes. Sites are hosted on modern infrastructure (Vercel) with fast global delivery. Ongoing maintenance is included in monthly plans, or available à la carte.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────────────── CTA BANNER ───────────────────── -->
+    <section class="cta-banner">
+      <div class="container">
+        <div class="cta-banner__inner reveal">
+          <div>
+            <span class="eyebrow eyebrow--gold">Ready when you are</span>
+            <h2 class="display display--light">
+              Let's build something<br/>
+              <em>worth shipping.</em>
+            </h2>
+          </div>
+          <a href="#contact" class="btn btn--primary btn--lg">
+            Start the conversation
+            <svg class="btn__arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────────────── CONTACT ───────────────────── -->
+    <section class="section section--soft" id="contact">
+      <div class="container">
+        <div class="contact">
+          <div class="contact__info reveal">
+            <span class="eyebrow eyebrow--ink">Get in touch</span>
+            <h2 class="display">
+              Tell us about<br/>
+              your business.
+            </h2>
+            <p class="contact__lede">
+              What you sell, where your customers come from, what's working, what isn't. We'll come back with a plan and a fixed quote — usually within 24 hours.
+            </p>
+
+            <ul class="contact__details">
+              <li>
+                <div class="contact__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="1.5"/><polyline points="22 6 12 13 2 6" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                </div>
+                <div>
+                  <strong>Email</strong>
+                  <a href="mailto:hello@landmarkdigital.agency">hello@landmarkdigital.agency</a>
+                </div>
+              </li>
+              <li>
+                <div class="contact__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/><polyline points="12 6 12 12 16 14" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                </div>
+                <div>
+                  <strong>Reply time</strong>
+                  <span>Usually within a few hours</span>
+                </div>
+              </li>
+              <li>
+                <div class="contact__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M4 19V5m0 14h16M8 16v-5m4 5V8m4 8v-7" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                </div>
+                <div>
+                  <strong>First step</strong>
+                  <span>30-min discovery call &amp; written plan</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="contact__form-wrap reveal reveal--d1">
+            <form class="contact-form" id="contactForm" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="firstName">First name</label>
+                  <input type="text" id="firstName" name="firstName" autocomplete="given-name" required />
+                </div>
+                <div class="form-group">
+                  <label for="lastName">Last name</label>
+                  <input type="text" id="lastName" name="lastName" autocomplete="family-name" required />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" autocomplete="email" required />
+              </div>
+              <div class="form-group">
+                <label for="business">Business name</label>
+                <input type="text" id="business" name="business" autocomplete="organization" />
+              </div>
+              <div class="form-group">
+                <label for="website">Current website <span class="opt">(optional)</span></label>
+                <input type="text" id="website" name="website" placeholder="yourbusiness.com" />
+              </div>
+              <div class="form-group">
+                <label for="need">What do you need?</label>
+                <select id="need" name="need" required>
+                  <option value="">Select one...</option>
+                  <option>New website</option>
+                  <option>Website redesign</option>
+                  <option>Google ads</option>
+                  <option>Meta / Instagram ads</option>
+                  <option>Landing page</option>
+                  <option>Lead system or CRM</option>
+                  <option>Complete website + ads + lead system</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="budget">Budget range</label>
+                <select id="budget" name="budget">
+                  <option value="">Select a range...</option>
+                  <option>Under $1,000</option>
+                  <option>$1,000 – $2,500</option>
+                  <option>$2,500 – $5,000</option>
+                  <option>$5,000+</option>
+                  <option>Monthly support only</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="message">Tell us about your goal</label>
+                <textarea id="message" name="message" rows="3" placeholder="What do you sell? Who do you want more leads from?"></textarea>
+              </div>
+              <button type="submit" class="btn btn--primary btn--full btn--lg">
+                Send my project request
+                <svg class="btn__arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <p class="form-fineprint">By submitting you agree to be contacted about your inquiry. No spam, no resold lists.</p>
+            </form>
+            <div class="form-success" id="formSuccess" hidden>
+              <div class="form-success__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <h3>We got it.</h3>
+              <p>Expect a reply within a few hours. We'll review your business and come back with a clear next step.</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
+  </main>
+
+  <!-- ───────────────────── FOOTER ───────────────────── -->
   <footer class="footer">
     <div class="container">
-      <div class="footer__top">
+      <div class="footer__grid">
         <div class="footer__brand">
-          <a href="#" class="nav__logo"><span class="nav__logo-mark">L</span><span>Landmark Digital</span></a>
-          <p>Websites, ads, and lead systems for businesses that want more qualified inquiries and cleaner follow-up.</p>
+          <a href="#" class="nav__logo" aria-label="Landmark Digital home">
+            <span class="nav__logo-mark" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none">
+                <path d="M6 24V8h3v13h9v3H6z" fill="currentColor"/>
+                <circle cx="23" cy="11" r="3" fill="currentColor"/>
+              </svg>
+            </span>
+            <span class="nav__logo-text">Landmark</span>
+          </a>
+          <p>Websites, ads, and lead systems for service and local businesses that want more booked work.</p>
         </div>
-        <div class="footer__links-group">
+        <div class="footer__links">
           <h4>Services</h4>
           <ul>
             <li><a href="#services">Websites</a></li>
-            <li><a href="#services">Ad Marketing</a></li>
-            <li><a href="#services">Lead Systems</a></li>
+            <li><a href="#services">Ad marketing</a></li>
+            <li><a href="#services">Lead systems</a></li>
             <li><a href="#pricing">Pricing</a></li>
           </ul>
         </div>
-        <div class="footer__links-group">
-          <h4>Company</h4>
+        <div class="footer__links">
+          <h4>Studio</h4>
           <ul>
-            <li><a href="#industries">Who We Help</a></li>
+            <li><a href="#work">Recent work</a></li>
             <li><a href="#process">Process</a></li>
+            <li><a href="#faq">FAQ</a></li>
             <li><a href="#contact">Contact</a></li>
-            <li><a href="#contact">Free Demo</a></li>
           </ul>
         </div>
-        <div class="footer__links-group">
-          <h4>Growth Focus</h4>
+        <div class="footer__links">
+          <h4>Clients</h4>
           <ul>
-            <li><a href="#contact">More calls</a></li>
-            <li><a href="#contact">Better quote requests</a></li>
-            <li><a href="#contact">Lead tracking</a></li>
+            <li><a href="/pay">Client portal</a></li>
+            <li><a href="mailto:hello@landmarkdigital.agency">Support</a></li>
           </ul>
         </div>
       </div>
       <div class="footer__bottom">
-        <p>&copy; 2026 Landmark Digital. All rights reserved.</p>
-        <p>Designed and built for growth.</p>
+        <p>© <span id="year">2026</span> Landmark Digital. All rights reserved.</p>
+        <p>Designed &amp; built in-house.</p>
       </div>
     </div>
   </footer>

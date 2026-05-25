@@ -1,0 +1,16 @@
+{
+  "name": "landmark-digital",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Landmark Digital — agency site + custom Stripe subscriptions",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "vercel dev",
+    "start": "vercel dev"
+  },
+  "dependencies": {
+    "stripe": "^17.5.0"
+  }
+}

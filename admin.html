@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Admin — Landmark Digital</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body { background: var(--paper-2); }
+    .admin-wrap { min-height: 100vh; padding: 56px 24px; display: flex; flex-direction: column; align-items: center; }
+
+    .admin-card {
+      width: 100%;
+      max-width: 460px;
+      padding: 36px 32px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+    }
+    .admin-card h1 {
+      font-family: var(--font-serif);
+      font-weight: 500;
+      font-size: 1.8rem;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+    .admin-card p.sub {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 24px;
+    }
+
+    .admin-dash {
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+    .admin-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .admin-header h1 {
+      font-family: var(--font-serif);
+      font-weight: 500;
+      font-size: 2rem;
+      letter-spacing: -0.025em;
+      margin-right: auto;
+    }
+    .admin-header .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 11px;
+      border-radius: 999px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: var(--gold-soft);
+      background: rgba(184, 145, 94, 0.10);
+      border: 1px solid rgba(184, 145, 94, 0.30);
+    }
+    .admin-link {
+      font-size: 0.88rem;
+      color: var(--muted);
+      transition: color var(--ease);
+    }
+    .admin-link:hover { color: var(--ink); }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 24px;
+      align-items: flex-start;
+    }
+    @media (max-width: 880px) { .grid-2 { grid-template-columns: 1fr; } }
+
+    .panel {
+      padding: 28px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+    }
+    .panel h2 {
+      font-family: var(--font-serif);
+      font-weight: 500;
+      font-size: 1.25rem;
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+    }
+    .panel .panel-sub {
+      color: var(--muted);
+      font-size: 0.88rem;
+      margin-bottom: 22px;
+    }
+
+    .field-group { display: grid; gap: 14px; }
+
+    .row-2 {
+      display: grid;
+      grid-template-columns: 1fr 130px;
+      gap: 12px;
+    }
+    @media (max-width: 480px) { .row-2 { grid-template-columns: 1fr; } }
+
+    .err {
+      margin-top: 12px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      background: rgba(220, 38, 38, 0.08);
+      border: 1px solid rgba(220, 38, 38, 0.24);
+      color: #B91C1C;
+      font-size: 0.86rem;
+    }
+    .ok {
+      margin-top: 12px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      background: rgba(46, 140, 95, 0.10);
+      border: 1px solid rgba(46, 140, 95, 0.28);
+      color: #14653E;
+      font-size: 0.86rem;
+    }
+
+    /* Client list */
+    .client-list { display: grid; gap: 12px; }
+    .client {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      padding: 16px 18px;
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+    .client__name {
+      font-family: var(--font-serif);
+      font-weight: 500;
+      font-size: 1.1rem;
+      letter-spacing: -0.01em;
+      margin-bottom: 4px;
+    }
+    .client__meta {
+      font-size: 0.85rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .client__price {
+      font-family: var(--font-serif);
+      font-weight: 500;
+      font-size: 1rem;
+      color: var(--ink);
+    }
+    .client__actions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 8px;
+    }
+    .client__url {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 10px;
+      border-radius: 8px;
+      background: var(--paper-2);
+      border: 1px solid var(--line);
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.78rem;
+      color: var(--ink-3);
+      cursor: pointer;
+      transition: background var(--ease);
+    }
+    .client__url:hover { background: var(--paper-3); }
+    .client__url.copied { background: rgba(46, 140, 95, 0.14); color: #14653E; border-color: rgba(46, 140, 95, 0.3); }
+    .client__archive {
+      padding: 6px 10px;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--muted);
+      font: inherit;
+      font-size: 0.78rem;
+      cursor: pointer;
+      transition: color var(--ease), border-color var(--ease);
+    }
+    .client__archive:hover { color: #B91C1C; border-color: rgba(220, 38, 38, 0.30); }
+
+    .empty {
+      padding: 28px;
+      text-align: center;
+      color: var(--muted);
+      background: var(--paper-2);
+      border: 1px dashed var(--line);
+      border-radius: var(--radius);
+      font-size: 0.92rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="admin-wrap">
+
+    <!-- LOGIN -->
+    <div class="admin-card" id="loginView">
+      <h1>Admin access</h1>
+      <p class="sub">Enter the admin password to manage client subscriptions.</p>
+      <form id="loginForm" class="field-group">
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" autocomplete="current-password" required />
+        </div>
+        <button type="submit" class="btn btn--primary btn--full" id="loginBtn">Unlock</button>
+        <div id="loginError" class="err" hidden></div>
+      </form>
+    </div>
+
+    <!-- DASHBOARD -->
+    <div class="admin-dash" id="dashView" hidden>
+      <header class="admin-header">
+        <h1>Client Subscriptions</h1>
+        <span class="badge">Admin</span>
+        <a href="/" class="admin-link">← Back to site</a>
+        <button type="button" id="logoutBtn" class="admin-link" style="background:none;border:0;cursor:pointer;font:inherit;">Sign out</button>
+      </header>
+
+      <div class="grid-2">
+        <!-- Create new client -->
+        <section class="panel">
+          <h2>New client subscription</h2>
+          <p class="panel-sub">Creates a Stripe Product + monthly recurring price. You'll get a shareable payment link.</p>
+
+          <form id="createForm" class="field-group">
+            <div class="form-group">
+              <label for="name">Client / business name</label>
+              <input type="text" id="name" name="name" placeholder="Acme Plumbing" required />
+            </div>
+            <div class="row-2">
+              <div class="form-group">
+                <label for="slug">URL slug <span class="opt">(auto from name)</span></label>
+                <input type="text" id="slug" name="slug" placeholder="acme-plumbing" />
+              </div>
+              <div class="form-group">
+                <label for="amount">$ / month</label>
+                <input type="number" id="amount" name="amount" min="1" step="1" placeholder="497" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="description">Internal note <span class="opt">(optional)</span></label>
+              <input type="text" id="description" name="description" placeholder="Website + ads — Q3 retainer" />
+            </div>
+            <button type="submit" class="btn btn--primary btn--full" id="createBtn">Create subscription</button>
+            <div id="createError" class="err" hidden></div>
+            <div id="createOk" class="ok" hidden></div>
+          </form>
+        </section>
+
+        <!-- Existing clients -->
+        <section class="panel">
+          <h2>Active clients</h2>
+          <p class="panel-sub">Click a payment URL to copy. Archiving stops new signups but doesn't cancel existing subscriptions — do that in Stripe.</p>
+
+          <div id="clientList" class="client-list">
+            <div class="empty">Loading…</div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const PW_KEY = 'lm_admin_pw';
+
+    const $ = (s) => document.querySelector(s);
+    const loginView = $('#loginView');
+    const dashView = $('#dashView');
+
+    function showError(el, msg) {
+      el.textContent = msg;
+      el.hidden = false;
+    }
+    function clear(el) { el.hidden = true; el.textContent = ''; }
+
+    async function api(path, opts = {}) {
+      const pw = sessionStorage.getItem(PW_KEY);
+      const res = await fetch(path, {
+        ...opts,
+        headers: {
+          'Content-Type': 'application/json',
+          'x-admin-password': pw || '',
+          ...(opts.headers || {}),
+        },
+      });
+      if (res.status === 401) {
+        sessionStorage.removeItem(PW_KEY);
+        location.reload();
+        throw new Error('Unauthorized');
+      }
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(data.error || `Request failed (${res.status})`);
+      return data;
+    }
+
+    function fmtMoney(cents, currency = 'usd') {
+      if (cents == null) return '—';
+      return new Intl.NumberFormat('en-US', {
+        style: 'currency', currency, minimumFractionDigits: 0, maximumFractionDigits: 2,
+      }).format(cents / 100);
+    }
+
+    function payUrl(slug) {
+      return `${location.origin}/pay?client=${encodeURIComponent(slug)}`;
+    }
+
+    async function loadClients() {
+      const listEl = $('#clientList');
+      listEl.innerHTML = '<div class="empty">Loading…</div>';
+      try {
+        const { clients } = await api('/api/admin/clients');
+        if (!clients.length) {
+          listEl.innerHTML = '<div class="empty">No active client subscriptions yet.</div>';
+          return;
+        }
+        listEl.innerHTML = '';
+        for (const c of clients) {
+          const url = payUrl(c.slug);
+          const row = document.createElement('div');
+          row.className = 'client';
+          row.innerHTML = `
+            <div>
+              <div class="client__name"></div>
+              <div class="client__meta">
+                <span class="client__price"></span>
+                <span class="client__slug" style="font-family:ui-monospace,monospace;font-size:0.78rem;"></span>
+              </div>
+            </div>
+            <div class="client__actions">
+              <button class="client__url" type="button" title="Copy payment URL"></button>
+              <button class="client__archive" type="button">Archive</button>
+            </div>
+          `;
+          row.querySelector('.client__name').textContent = c.name;
+          row.querySelector('.client__price').textContent =
+            `${fmtMoney(c.amount_cents, c.currency)} / ${c.interval}`;
+          row.querySelector('.client__slug').textContent = `/${c.slug}`;
+          const urlBtn = row.querySelector('.client__url');
+          urlBtn.textContent = url.replace(/^https?:\/\//, '');
+          urlBtn.addEventListener('click', async () => {
+            try {
+              await navigator.clipboard.writeText(url);
+              urlBtn.classList.add('copied');
+              const original = urlBtn.textContent;
+              urlBtn.textContent = '✓ Copied';
+              setTimeout(() => {
+                urlBtn.classList.remove('copied');
+                urlBtn.textContent = original;
+              }, 1400);
+            } catch {
+              prompt('Copy the URL:', url);
+            }
+          });
+          row.querySelector('.client__archive').addEventListener('click', async () => {
+            if (!confirm(`Archive ${c.name}? This hides the payment link. Existing Stripe subscriptions are not affected.`)) return;
+            try {
+              await api(`/api/admin/client?id=${encodeURIComponent(c.id)}`, { method: 'DELETE' });
+              loadClients();
+            } catch (e) {
+              alert(e.message);
+            }
+          });
+          listEl.appendChild(row);
+        }
+      } catch (e) {
+        listEl.innerHTML = `<div class="empty">${e.message}</div>`;
+      }
+    }
+
+    // Login
+    $('#loginForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = $('#loginBtn');
+      const err = $('#loginError');
+      clear(err);
+      const password = $('#password').value;
+      btn.disabled = true;
+      btn.textContent = 'Checking…';
+      try {
+        const res = await fetch('/api/admin/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ password }),
+        });
+        if (!res.ok) {
+          const d = await res.json().catch(() => ({}));
+          throw new Error(d.error || 'Wrong password');
+        }
+        sessionStorage.setItem(PW_KEY, password);
+        showDash();
+      } catch (e) {
+        showError(err, e.message);
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Unlock';
+      }
+    });
+
+    // Auto-slug from name (only if slug is empty / hasn't been touched)
+    let slugTouched = false;
+    $('#slug').addEventListener('input', () => { slugTouched = true; });
+    $('#name').addEventListener('input', (e) => {
+      if (slugTouched) return;
+      $('#slug').value = e.target.value
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '')
+        .slice(0, 60);
+    });
+
+    // Create
+    $('#createForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = $('#createBtn');
+      const err = $('#createError');
+      const ok = $('#createOk');
+      clear(err); clear(ok);
+      const data = {
+        name: $('#name').value.trim(),
+        slug: $('#slug').value.trim(),
+        amount: Number($('#amount').value),
+        description: $('#description').value.trim(),
+      };
+      btn.disabled = true;
+      btn.textContent = 'Creating…';
+      try {
+        const { client } = await api('/api/admin/clients', {
+          method: 'POST',
+          body: JSON.stringify(data),
+        });
+        ok.innerHTML = `Created. Payment link: <a href="${payUrl(client.slug)}" target="_blank" style="text-decoration:underline;">${payUrl(client.slug).replace(/^https?:\/\//, '')}</a>`;
+        ok.hidden = false;
+        $('#createForm').reset();
+        slugTouched = false;
+        loadClients();
+      } catch (e) {
+        showError(err, e.message);
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Create subscription';
+      }
+    });
+
+    // Sign out
+    $('#logoutBtn').addEventListener('click', () => {
+      sessionStorage.removeItem(PW_KEY);
+      location.reload();
+    });
+
+    function showDash() {
+      loginView.hidden = true;
+      dashView.hidden = false;
+      loadClients();
+    }
+
+    // Auto-enter dashboard if password is in sessionStorage
+    if (sessionStorage.getItem(PW_KEY)) {
+      // Validate it still works; if not, fall back to login.
+      api('/api/admin/clients').then(showDash).catch(() => {
+        sessionStorage.removeItem(PW_KEY);
+      });
+    }
+  </script>
+</body>
+</html>

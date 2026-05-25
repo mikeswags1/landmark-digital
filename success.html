@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Subscription confirmed — Landmark Digital</title>
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      background:
+        radial-gradient(60vw 60vw at 90% -10%, rgba(184, 145, 94, 0.12), transparent 60%),
+        var(--paper);
+    }
+    .success {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 56px 24px;
+    }
+    .success-card {
+      max-width: 520px;
+      width: 100%;
+      padding: 48px 40px;
+      text-align: center;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+    }
+    .success-check {
+      width: 64px; height: 64px;
+      display: grid; place-items: center;
+      margin: 0 auto 24px;
+      border-radius: 50%;
+      color: var(--paper);
+      background: var(--green);
+    }
+    .success-check svg { width: 30px; height: 30px; }
+    .success-card h1 {
+      font-family: var(--font-serif);
+      font-weight: 500;
+      font-size: 2rem;
+      letter-spacing: -0.025em;
+      margin-bottom: 12px;
+    }
+    .success-card p {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+    .success-card .btn { margin: 0 6px; }
+    .success-meta {
+      margin-top: 28px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="success">
+    <div class="success-card">
+      <div class="success-check" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h1>You're all set.</h1>
+      <p>Your subscription is active. A receipt is on its way to your email, and you'll be billed automatically each month. We'll be in touch with next steps shortly.</p>
+      <a href="/" class="btn btn--primary">Back to landmarkdigital.agency</a>
+      <p class="success-meta">
+        Questions? Email <a href="mailto:hello@landmarkdigital.agency" style="color:var(--ink);text-decoration:underline;">hello@landmarkdigital.agency</a>.
+      </p>
+    </div>
+  </div>
+</body>
+</html>
