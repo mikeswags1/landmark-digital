@@ -207,6 +207,247 @@
       border-radius: var(--radius);
       font-size: 0.92rem;
     }
+
+    /* ===== Tab navigation ===== */
+    .tab-nav {
+      display: flex;
+      gap: 4px;
+      margin-bottom: 28px;
+      border-bottom: 1px solid var(--line);
+    }
+    .tab-btn {
+      padding: 12px 20px;
+      background: none;
+      border: 0;
+      border-bottom: 2px solid transparent;
+      font: inherit;
+      font-family: var(--font-serif);
+      font-weight: 500;
+      font-size: 1rem;
+      letter-spacing: -0.01em;
+      color: var(--muted);
+      cursor: pointer;
+      transition: color var(--ease), border-color var(--ease);
+      margin-bottom: -1px;
+    }
+    .tab-btn:hover { color: var(--ink); }
+    .tab-btn.active {
+      color: var(--ink);
+      border-bottom-color: var(--gold-soft);
+    }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* ===== AI Automation tab ===== */
+    .integration-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    @media (max-width: 720px) { .integration-row { grid-template-columns: 1fr; } }
+    .integration {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 16px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+    .integration__label {
+      font-family: var(--font-serif);
+      font-weight: 500;
+      font-size: 0.98rem;
+    }
+    .integration__sub {
+      font-size: 0.76rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .pill--off {
+      color: #B91C1C;
+      background: rgba(220, 38, 38, 0.08);
+      border: 1px solid rgba(220, 38, 38, 0.24);
+    }
+    .pill--on {
+      color: #14653E;
+      background: rgba(46, 140, 95, 0.10);
+      border: 1px solid rgba(46, 140, 95, 0.28);
+    }
+    .pill::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: currentColor;
+    }
+
+    /* AI Automation two-column */
+    .ai-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 24px;
+      align-items: flex-start;
+    }
+    @media (max-width: 960px) { .ai-grid { grid-template-columns: 1fr; } }
+
+    /* Leads panel */
+    .leads-toolbar {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .btn--small {
+      padding: 8px 14px;
+      font-size: 0.86rem;
+    }
+    .btn--ghost {
+      background: transparent;
+      border: 1px solid var(--line);
+      color: var(--ink);
+    }
+    .btn--ghost:hover { background: var(--paper-2); }
+    .btn--disabled,
+    .btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      pointer-events: auto;
+    }
+    .leads-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.86rem;
+    }
+    .leads-table thead th {
+      text-align: left;
+      padding: 10px 12px;
+      background: var(--paper-2);
+      border-bottom: 1px solid var(--line);
+      font-weight: 600;
+      color: var(--muted);
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .leads-table tbody td {
+      padding: 12px;
+      border-bottom: 1px solid var(--line);
+    }
+    .leads-table .lead-status {
+      font-size: 0.74rem;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: var(--paper-2);
+      color: var(--muted);
+    }
+
+    /* Sequence panel */
+    .seq-email {
+      padding: 18px 18px 14px;
+      background: var(--paper-2);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      margin-bottom: 14px;
+    }
+    .seq-email-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .seq-email-title {
+      font-family: var(--font-serif);
+      font-weight: 500;
+      font-size: 1.02rem;
+    }
+    .seq-email-delay {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    .seq-email textarea {
+      width: 100%;
+      min-height: 96px;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      font: inherit;
+      font-size: 0.9rem;
+      background: var(--paper);
+      resize: vertical;
+    }
+    .seq-email input[type="text"] {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      font: inherit;
+      font-size: 0.9rem;
+      background: var(--paper);
+      margin-bottom: 10px;
+    }
+    .seq-email label {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 4px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .ai-draft-btn {
+      font-size: 0.78rem;
+      padding: 6px 12px;
+      background: rgba(184, 145, 94, 0.12);
+      border: 1px solid rgba(184, 145, 94, 0.35);
+      color: var(--gold-soft);
+      border-radius: 999px;
+      cursor: pointer;
+      transition: background var(--ease);
+    }
+    .ai-draft-btn:hover { background: rgba(184, 145, 94, 0.22); }
+
+    /* Launch bar */
+    .launch-bar {
+      margin-top: 24px;
+      padding: 20px 24px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .launch-bar__copy {
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+    .launch-bar__copy strong { color: var(--ink); }
+
+    /* TODO banner */
+    .todo-banner {
+      padding: 12px 16px;
+      background: rgba(184, 145, 94, 0.08);
+      border: 1px solid rgba(184, 145, 94, 0.28);
+      border-radius: var(--radius);
+      color: var(--ink-2, var(--ink));
+      font-size: 0.86rem;
+      margin-bottom: 20px;
+    }
+    .todo-banner strong { font-family: var(--font-serif); }
   </style>
 </head>
 <body>
@@ -229,53 +470,199 @@
     <!-- DASHBOARD -->
     <div class="admin-dash" id="dashView" hidden>
       <header class="admin-header">
-        <h1>Client Subscriptions</h1>
+        <h1>Landmark Digital Admin</h1>
         <span class="badge">Admin</span>
         <a href="/" class="admin-link">← Back to site</a>
         <button type="button" id="logoutBtn" class="admin-link" style="background:none;border:0;cursor:pointer;font:inherit;">Sign out</button>
       </header>
 
-      <div class="grid-2">
-        <!-- Create new client -->
-        <section class="panel">
-          <h2>New client subscription</h2>
-          <p class="panel-sub">Creates a Stripe Product + monthly recurring price. You'll get a shareable payment link.</p>
+      <!-- Tab nav -->
+      <nav class="tab-nav" role="tablist">
+        <button type="button" class="tab-btn active" data-tab="subscriptions" role="tab">Subscriptions</button>
+        <button type="button" class="tab-btn" data-tab="ai-automation" role="tab">AI Automation</button>
+      </nav>
 
-          <form id="createForm" class="field-group">
-            <div class="form-group">
-              <label for="name">Client / business name</label>
-              <input type="text" id="name" name="name" placeholder="Acme Plumbing" required />
-            </div>
-            <div class="row-2">
+      <!-- ============ Subscriptions tab ============ -->
+      <section class="tab-panel active" id="tab-subscriptions" role="tabpanel">
+        <div class="grid-2">
+          <!-- Create new client -->
+          <section class="panel">
+            <h2>New client subscription</h2>
+            <p class="panel-sub">Creates a Stripe Product + monthly recurring price. You'll get a shareable payment link.</p>
+
+            <form id="createForm" class="field-group">
               <div class="form-group">
-                <label for="slug">URL slug <span class="opt">(auto from name)</span></label>
-                <input type="text" id="slug" name="slug" placeholder="acme-plumbing" />
+                <label for="name">Client / business name</label>
+                <input type="text" id="name" name="name" placeholder="Acme Plumbing" required />
+              </div>
+              <div class="row-2">
+                <div class="form-group">
+                  <label for="slug">URL slug <span class="opt">(auto from name)</span></label>
+                  <input type="text" id="slug" name="slug" placeholder="acme-plumbing" />
+                </div>
+                <div class="form-group">
+                  <label for="amount">$ / month</label>
+                  <input type="number" id="amount" name="amount" min="1" step="1" placeholder="497" required />
+                </div>
               </div>
               <div class="form-group">
-                <label for="amount">$ / month</label>
-                <input type="number" id="amount" name="amount" min="1" step="1" placeholder="497" required />
+                <label for="description">Internal note <span class="opt">(optional)</span></label>
+                <input type="text" id="description" name="description" placeholder="Website + ads — Q3 retainer" />
               </div>
-            </div>
-            <div class="form-group">
-              <label for="description">Internal note <span class="opt">(optional)</span></label>
-              <input type="text" id="description" name="description" placeholder="Website + ads — Q3 retainer" />
-            </div>
-            <button type="submit" class="btn btn--primary btn--full" id="createBtn">Create subscription</button>
-            <div id="createError" class="err" hidden></div>
-            <div id="createOk" class="ok" hidden></div>
-          </form>
-        </section>
+              <button type="submit" class="btn btn--primary btn--full" id="createBtn">Create subscription</button>
+              <div id="createError" class="err" hidden></div>
+              <div id="createOk" class="ok" hidden></div>
+            </form>
+          </section>
 
-        <!-- Existing clients -->
-        <section class="panel">
-          <h2>Active clients</h2>
-          <p class="panel-sub">Click a payment URL to copy. Archiving stops new signups but doesn't cancel existing subscriptions — do that in Stripe.</p>
+          <!-- Existing clients -->
+          <section class="panel">
+            <h2>Active clients</h2>
+            <p class="panel-sub">Click a payment URL to copy. Archiving stops new signups but doesn't cancel existing subscriptions — do that in Stripe.</p>
 
-          <div id="clientList" class="client-list">
-            <div class="empty">Loading…</div>
+            <div id="clientList" class="client-list">
+              <div class="empty">Loading…</div>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <!-- ============ AI Automation tab ============ -->
+      <section class="tab-panel" id="tab-ai-automation" role="tabpanel">
+
+        <div class="todo-banner">
+          <strong>Scaffolding mode.</strong> The UI is laid out — wiring to Apollo (leads), Mailforge (sending inboxes), and Instantly (sequencer) plugs in once those services are connected. Warmup runs through Day 15.
+        </div>
+
+        <!-- Integration status row -->
+        <div class="integration-row">
+          <div class="integration">
+            <div>
+              <div class="integration__label">Apollo</div>
+              <div class="integration__sub">Lead database — source of cold prospects</div>
+            </div>
+            <span class="pill pill--off" id="status-apollo">Not connected</span>
           </div>
-        </section>
-      </div>
+          <div class="integration">
+            <div>
+              <div class="integration__label">Mailforge</div>
+              <div class="integration__sub">9 inboxes warming — Day 2 of 14</div>
+            </div>
+            <span class="pill pill--off" id="status-mailforge">Warming</span>
+          </div>
+          <div class="integration">
+            <div>
+              <div class="integration__label">Instantly</div>
+              <div class="integration__sub">Sequence engine — sends + tracks replies</div>
+            </div>
+            <span class="pill pill--off" id="status-instantly">Not connected</span>
+          </div>
+        </div>
+
+        <div class="ai-grid">
+          <!-- LEFT: Leads -->
+          <section class="panel">
+            <h2>Leads</h2>
+            <p class="panel-sub">Import from Apollo CSV, view ICP fit, push to sequence.</p>
+
+            <div class="leads-toolbar">
+              <button type="button" class="btn btn--ghost btn--small" id="importLeadsBtn" disabled title="Connect Apollo to enable">+ Import from Apollo</button>
+              <button type="button" class="btn btn--ghost btn--small" id="uploadCsvBtn">Upload CSV</button>
+            </div>
+
+            <table class="leads-table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Company</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="leadsBody">
+                <tr><td colspan="3" class="empty" style="border:0;">No leads yet. Apollo pulls + CSV import will populate this.</td></tr>
+              </tbody>
+            </table>
+          </section>
+
+          <!-- RIGHT: Email sequence -->
+          <section class="panel">
+            <h2>4-Email Sequence</h2>
+            <p class="panel-sub">Write your cold sequence here. "AI draft" generates a personalized version per lead at send time.</p>
+
+            <!-- Email 1 -->
+            <div class="seq-email">
+              <div class="seq-email-head">
+                <span class="seq-email-title">Email 1</span>
+                <div style="display:flex;gap:10px;align-items:center;">
+                  <span class="seq-email-delay">Send: Day 1</span>
+                  <button type="button" class="ai-draft-btn" data-email="1">✨ AI draft</button>
+                </div>
+              </div>
+              <label>Subject</label>
+              <input type="text" id="email1-subject" placeholder="Quick question about {{company}}" />
+              <label>Body</label>
+              <textarea id="email1-body" placeholder="Hey {{firstName}}, ..."></textarea>
+            </div>
+
+            <!-- Email 2 -->
+            <div class="seq-email">
+              <div class="seq-email-head">
+                <span class="seq-email-title">Email 2</span>
+                <div style="display:flex;gap:10px;align-items:center;">
+                  <span class="seq-email-delay">Send: Day 4 (if no reply)</span>
+                  <button type="button" class="ai-draft-btn" data-email="2">✨ AI draft</button>
+                </div>
+              </div>
+              <label>Subject</label>
+              <input type="text" id="email2-subject" placeholder="Re: quick question" />
+              <label>Body</label>
+              <textarea id="email2-body" placeholder="Following up on..."></textarea>
+            </div>
+
+            <!-- Email 3 -->
+            <div class="seq-email">
+              <div class="seq-email-head">
+                <span class="seq-email-title">Email 3</span>
+                <div style="display:flex;gap:10px;align-items:center;">
+                  <span class="seq-email-delay">Send: Day 9 (if no reply)</span>
+                  <button type="button" class="ai-draft-btn" data-email="3">✨ AI draft</button>
+                </div>
+              </div>
+              <label>Subject</label>
+              <input type="text" id="email3-subject" placeholder="2-min Loom for {{company}}" />
+              <label>Body</label>
+              <textarea id="email3-body" placeholder="Recorded a quick demo specifically for..."></textarea>
+            </div>
+
+            <!-- Email 4 -->
+            <div class="seq-email">
+              <div class="seq-email-head">
+                <span class="seq-email-title">Email 4</span>
+                <div style="display:flex;gap:10px;align-items:center;">
+                  <span class="seq-email-delay">Send: Day 13 (breakup email)</span>
+                  <button type="button" class="ai-draft-btn" data-email="4">✨ AI draft</button>
+                </div>
+              </div>
+              <label>Subject</label>
+              <input type="text" id="email4-subject" placeholder="Closing the loop" />
+              <label>Body</label>
+              <textarea id="email4-body" placeholder="Haven't heard back — assuming the timing isn't right..."></textarea>
+            </div>
+
+            <button type="button" class="btn btn--ghost btn--small" id="saveSequenceBtn" style="margin-top:8px;">Save sequence</button>
+          </section>
+        </div>
+
+        <!-- Launch bar -->
+        <div class="launch-bar">
+          <div class="launch-bar__copy">
+            <strong>Push to Instantly</strong> — sends your leads + sequence to Instantly.ai for automated rotation across your 9 Mailforge inboxes.
+          </div>
+          <button type="button" class="btn btn--primary" id="pushToInstantlyBtn" disabled title="Connect Instantly first">Push to Instantly →</button>
+        </div>
+
+      </section>
+
     </div>
 
   </div>
@@ -472,6 +859,59 @@
       dashView.hidden = false;
       loadClients();
     }
+
+    // ============================================================
+    // Tab switching
+    // ============================================================
+    document.querySelectorAll('.tab-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const target = btn.getAttribute('data-tab');
+        document.querySelectorAll('.tab-btn').forEach((b) => b.classList.toggle('active', b === btn));
+        document.querySelectorAll('.tab-panel').forEach((p) => {
+          p.classList.toggle('active', p.id === `tab-${target}`);
+        });
+      });
+    });
+
+    // ============================================================
+    // AI Automation tab — all handlers are STUBS for now.
+    // TODO: wire each one up after Day 15 launch (warmup complete + Apollo + Instantly accounts active).
+    // ============================================================
+
+    // TODO: Replace with /api/admin/apollo/import — pulls leads from Apollo using saved filter.
+    document.getElementById('importLeadsBtn')?.addEventListener('click', () => {
+      alert('TODO: Wire to Apollo API once account is connected (target: Day 5-7).');
+    });
+
+    // TODO: Parse CSV → POST /api/admin/leads — upserts into a leads store (Stripe metadata? KV? Postgres?).
+    document.getElementById('uploadCsvBtn')?.addEventListener('click', () => {
+      alert('TODO: CSV upload flow — parse Apollo CSV export → store leads → render in table.');
+    });
+
+    // TODO: Each AI draft button → POST /api/admin/ai-draft with { emailNum, leadContext, sequenceSoFar }
+    //       Server calls Claude API (Anthropic SDK) → returns subject + body → fills the textareas.
+    document.querySelectorAll('.ai-draft-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const n = btn.getAttribute('data-email');
+        alert(`TODO: Generate Email ${n} via Claude API. Will use prospect company/role + your prior emails in the sequence.`);
+      });
+    });
+
+    // TODO: POST /api/admin/sequences — save the 4 emails so they persist across reloads.
+    document.getElementById('saveSequenceBtn')?.addEventListener('click', () => {
+      alert('TODO: Persist sequence to backend so it survives reloads + can be pushed to Instantly.');
+    });
+
+    // TODO: POST /api/admin/instantly/push — sends leads + sequence to Instantly via their API.
+    //       Requires Instantly API key in env vars.
+    document.getElementById('pushToInstantlyBtn')?.addEventListener('click', () => {
+      alert('TODO: Push leads + sequence to Instantly.ai. Disabled until Instantly account exists.');
+    });
+
+    // ============================================================
+    // TODO: Once integrations are wired, update these status pills
+    // by hitting status endpoints and flipping pill--off → pill--on.
+    // ============================================================
 
     // Auto-enter dashboard if password is in sessionStorage
     if (sessionStorage.getItem(PW_KEY)) {
