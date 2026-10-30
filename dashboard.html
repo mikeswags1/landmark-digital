@@ -1,0 +1,306 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Client Dashboard — Landmark Digital</title>
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    :root {
+      --paper: var(--panel);
+      --paper-2: var(--bg-2);
+      --shadow: var(--shadow-lg);
+      --shadow-sm: 0 10px 30px rgba(0, 0, 0, 0.35);
+      --ease: 0.2s ease;
+    }
+    body { background: var(--paper-2); }
+    .wrap { min-height: 100vh; padding: 56px 24px; display: flex; flex-direction: column; align-items: center; }
+
+    .login-card {
+      width: 100%; max-width: 460px; padding: 36px 32px;
+      background: var(--paper); border: 1px solid var(--line);
+      border-radius: var(--radius-lg); box-shadow: var(--shadow);
+    }
+    .login-card h1 { font-family: var(--font-serif); font-weight: 500; font-size: 1.8rem; letter-spacing: -0.02em; margin-bottom: 8px; }
+    .login-card p.sub { color: var(--muted); font-size: 0.92rem; margin-bottom: 24px; }
+    .field-group { display: grid; gap: 14px; }
+    .err { margin-top: 12px; padding: 10px 12px; border-radius: 10px; background: rgba(220,38,38,.08); border: 1px solid rgba(220,38,38,.25); color: #991b1b; font-size: .88rem; }
+
+    .dash { width: 100%; max-width: 1120px; margin: 0 auto; }
+    .dash-header { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-bottom: 8px; }
+    .dash-header h1 { font-family: var(--font-serif); font-weight: 500; font-size: 2rem; letter-spacing: -0.025em; margin-right: auto; }
+    .dash-sub { color: var(--muted); font-size: .9rem; margin-bottom: 28px; }
+    .dash-link { font-size: .88rem; color: var(--muted); }
+    .dash-link:hover { color: var(--ink); }
+
+    .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(165px, 1fr)); gap: 14px; margin-bottom: 24px; }
+    .tile {
+      padding: 20px 22px; background: var(--paper); border: 1px solid var(--line);
+      border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);
+    }
+    .tile .k { font-size: .74rem; font-weight: 600; letter-spacing: .09em; text-transform: uppercase; color: var(--muted); }
+    .tile .v { font-family: var(--font-serif); font-size: 1.9rem; letter-spacing: -0.02em; margin-top: 6px; }
+    .tile .d { font-size: .78rem; color: var(--muted); margin-top: 4px; }
+
+    .panel {
+      padding: 26px 28px; background: var(--paper); border: 1px solid var(--line);
+      border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); margin-bottom: 24px;
+    }
+    .panel h2 { font-family: var(--font-serif); font-weight: 500; font-size: 1.25rem; letter-spacing: -0.02em; margin-bottom: 4px; }
+    .panel .panel-sub { color: var(--muted); font-size: .86rem; margin-bottom: 18px; }
+
+    /* chart */
+    .chart { position: relative; }
+    .chart svg { display: block; width: 100%; height: auto; }
+    .bar { transition: opacity .15s ease; cursor: default; }
+    .bar:hover { opacity: .82; }
+    .tooltip {
+      position: absolute; pointer-events: none; background: var(--ink); color: var(--paper);
+      font-size: .78rem; padding: 6px 10px; border-radius: 8px; white-space: nowrap;
+      transform: translate(-50%, -120%); opacity: 0; transition: opacity .12s ease;
+    }
+
+    /* table */
+    table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+    th { text-align: left; font-size: .72rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--muted); padding: 8px 10px; border-bottom: 1px solid var(--line); }
+    td { padding: 12px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    td .who { font-weight: 600; }
+    td .where { color: var(--muted); font-size: .8rem; }
+    td .note { color: var(--muted); font-size: .8rem; margin-top: 3px; max-width: 380px; }
+    td a { color: inherit; text-decoration: underline; text-decoration-color: var(--line); }
+    td a:hover { text-decoration-color: var(--ink); }
+    .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+    .chip {
+      display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px; border-radius: 999px;
+      font-size: .72rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; white-space: nowrap;
+    }
+    .chip::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+    .chip.paid { color: #2f6e41; background: rgba(47,110,65,.10); border: 1px solid rgba(47,110,65,.28); }
+    .chip.owes { color: #8a5a17; background: rgba(176,122,42,.12); border: 1px solid rgba(176,122,42,.32); }
+    .chip.retainer { color: #1f5f8a; background: rgba(31,95,138,.10); border: 1px solid rgba(31,95,138,.28); }
+
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    @media (max-width: 880px) { .two-col { grid-template-columns: 1fr; } }
+    ul.plain { list-style: none; display: grid; gap: 10px; }
+    ul.plain li { padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px; font-size: .88rem; }
+    ul.plain li .s { color: var(--muted); font-size: .78rem; display: block; margin-top: 2px; }
+    ul.plain.compact li { padding: 7px 10px; font-size: .82rem; color: var(--muted); }
+
+    .foot { color: var(--muted); font-size: .8rem; text-align: center; margin-top: 8px; padding-bottom: 24px; }
+    @media (max-width: 700px) {
+      .hide-sm { display: none; }
+      .panel { padding: 20px 16px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <div class="login-card" id="loginView">
+      <h1>Client Dashboard</h1>
+      <p class="sub">Enter the admin password to view Landmark Digital's client ledger.</p>
+      <form id="loginForm" class="field-group">
+        <div>
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" autocomplete="current-password" required />
+        </div>
+        <button type="submit" class="btn btn--primary btn--full" id="loginBtn">Unlock</button>
+        <div id="loginError" class="err" hidden></div>
+      </form>
+    </div>
+
+    <div class="dash" id="dashView" hidden>
+      <div class="dash-header">
+        <h1>Landmark Digital — Clients</h1>
+        <a class="dash-link" href="/admin">Billing admin →</a>
+        <a class="dash-link" href="#" id="logoutLink">Lock</a>
+      </div>
+      <p class="dash-sub" id="updatedLine"></p>
+
+      <div class="tiles" id="tiles"></div>
+
+      <div class="panel">
+        <h2>Collected by month</h2>
+        <p class="panel-sub">Tracked payments only — months are approximate for pre-ledger deals. Jake's untracked payments not included.</p>
+        <div class="chart" id="chart"></div>
+      </div>
+
+      <div class="panel">
+        <h2>Clients</h2>
+        <p class="panel-sub">Everyone who has paid or owes money.</p>
+        <div style="overflow-x:auto">
+          <table id="clientTable">
+            <thead>
+              <tr><th>Client</th><th>Site</th><th class="hide-sm">Status</th><th class="num">Deal</th><th class="num">Paid</th><th class="num">Owed</th></tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="two-col">
+        <div class="panel">
+          <h2>Hot prospects</h2>
+          <p class="panel-sub">Site built, waiting on a yes.</p>
+          <ul class="plain" id="prospectList"></ul>
+        </div>
+        <div class="panel">
+          <h2>Demos out fishing</h2>
+          <p class="panel-sub">Cold-outreach builds, unsold.</p>
+          <ul class="plain" id="demoList"></ul>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>Unclassified builds</h2>
+        <p class="panel-sub">Sites in Vercel from untracked sessions — tell Claude what each was to clean these up.</p>
+        <ul class="plain compact" id="unknownList"></ul>
+      </div>
+
+      <p class="foot">Maintained by Claude — numbers mirror the client ledger. When money lands or a deal closes, tell Claude and this page updates.</p>
+    </div>
+
+  </div>
+
+  <script>
+    const PW_KEY = 'lm_admin_pw';
+    const $ = (s) => document.querySelector(s);
+    const money = (n) => n == null ? '—' : '$' + Number(n).toLocaleString();
+
+    async function fetchLedger() {
+      const pw = sessionStorage.getItem(PW_KEY);
+      const res = await fetch('/api/admin/ledger', { headers: { 'x-admin-password': pw || '' } });
+      if (res.status === 401) { sessionStorage.removeItem(PW_KEY); throw new Error('locked'); }
+      if (!res.ok) throw new Error('Failed to load ledger');
+      return res.json();
+    }
+
+    function render(data) {
+      $('#updatedLine').textContent = 'Ledger updated ' + data.updated + ' · data is private (server-side, password-gated)';
+
+      const collected = data.clients.reduce((s, c) => s + (c.paid || 0), 0);
+      const owed = data.clients.reduce((s, c) => s + (c.owed || 0), 0);
+      const payingClients = data.clients.filter(c => (c.paid || 0) > 0 || c.status === 'retainer').length;
+
+      const tiles = [
+        ['Collected (tracked)', money(collected), '+ Jake, untracked'],
+        ['Outstanding', money(owed), data.clients.filter(c => c.owed > 0).map(c => c.name.split(' ')[1] || c.name.split(' ')[0]).join(' · ') || 'nothing owed'],
+        ['Incoming MRR', money(data.incomingMrr) + '/mo', 'Jake retainer, starting soon'],
+        ['Paying clients', payingClients, 'incl. retainer'],
+        ['Hot prospects', data.prospects.length, 'sites live, unsold'],
+        ['Demos fishing', data.demos.length, 'cold outreach'],
+      ];
+      $('#tiles').innerHTML = tiles.map(([k, v, d]) =>
+        `<div class="tile"><div class="k">${k}</div><div class="v">${v}</div><div class="d">${d}</div></div>`).join('');
+
+      renderChart(data.monthly);
+
+      $('#clientTable tbody').innerHTML = data.clients.map(c => `
+        <tr>
+          <td><div class="who">${c.name}</div><div class="where">${c.where}</div><div class="note">${c.note}</div></td>
+          <td><a href="${c.url}" target="_blank" rel="noopener">${c.site}</a></td>
+          <td class="hide-sm"><span class="chip ${c.status}">${c.status === 'owes' ? 'owes $' + c.owed : c.status}</span></td>
+          <td class="num">${money(c.deal)}</td>
+          <td class="num">${money(c.paid)}</td>
+          <td class="num">${c.owed ? money(c.owed) : '—'}</td>
+        </tr>`).join('');
+
+      $('#prospectList').innerHTML = data.prospects.map(p =>
+        `<li><strong>${p.name}</strong><span class="s"><a href="https://${p.site}" target="_blank" rel="noopener">${p.site}</a> — ${p.note}</span></li>`).join('');
+      $('#demoList').innerHTML = data.demos.map(d =>
+        `<li>${d.name}<span class="s"><a href="https://${d.site}" target="_blank" rel="noopener">${d.site}</a></span></li>`).join('');
+      $('#unknownList').innerHTML = data.unknown.map(u => `<li>${u}</li>`).join('');
+    }
+
+    function renderChart(monthly) {
+      const W = 720, H = 240, padL = 46, padB = 30, padT = 18, padR = 10;
+      const max = Math.max(...monthly.map(m => m.amount), 1);
+      const step = (W - padL - padR) / monthly.length;
+      const barW = Math.min(64, step * 0.5);
+      const yMax = Math.ceil(max / 100) * 100;
+      const y = (v) => padT + (H - padT - padB) * (1 - v / yMax);
+
+      let grid = '';
+      for (let g = 0; g <= yMax; g += 100) {
+        grid += `<line x1="${padL}" x2="${W - padR}" y1="${y(g)}" y2="${y(g)}" stroke="rgba(244,239,230,0.1)" stroke-width="1"/>` +
+                `<text x="${padL - 8}" y="${y(g) + 4}" text-anchor="end" font-size="11" fill="#968f80">$${g}</text>`;
+      }
+      const bars = monthly.map((m, i) => {
+        const cx = padL + step * i + step / 2;
+        const bh = y(0) - y(m.amount);
+        return `<g class="bar" data-i="${i}">
+          <rect x="${cx - barW / 2}" y="${y(m.amount)}" width="${barW}" height="${bh}" rx="4" fill="#d9b888"/>
+          <rect x="${cx - barW / 2}" y="${y(0) - 2}" width="${barW}" height="2" fill="#d9b888"/>
+          <text x="${cx}" y="${y(m.amount) - 7}" text-anchor="middle" font-size="12" font-weight="600" fill="#f4efe6">${'$' + m.amount}</text>
+          <text x="${cx}" y="${H - 8}" text-anchor="middle" font-size="11.5" fill="#968f80">${m.month}</text>
+        </g>`;
+      }).join('');
+
+      $('#chart').innerHTML =
+        `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Collected revenue by month">${grid}${bars}</svg>` +
+        `<div class="tooltip" id="tip"></div>`;
+
+      const tip = $('#tip');
+      document.querySelectorAll('.bar').forEach(el => {
+        el.addEventListener('mousemove', (e) => {
+          const m = monthly[+el.dataset.i];
+          tip.textContent = `${m.month}: $${m.amount} — ${m.note}`;
+          const r = $('#chart').getBoundingClientRect();
+          tip.style.left = (e.clientX - r.left) + 'px';
+          tip.style.top = (e.clientY - r.top) + 'px';
+          tip.style.opacity = 1;
+        });
+        el.addEventListener('mouseleave', () => { tip.style.opacity = 0; });
+      });
+    }
+
+    async function unlock() {
+      try {
+        const data = await fetchLedger();
+        $('#loginView').hidden = true;
+        $('#dashView').hidden = false;
+        render(data);
+      } catch {
+        $('#loginView').hidden = false;
+        $('#dashView').hidden = true;
+      }
+    }
+
+    $('#loginForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = $('#loginBtn'), err = $('#loginError');
+      err.hidden = true; btn.disabled = true; btn.textContent = 'Checking…';
+      try {
+        const res = await fetch('/api/admin/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ password: $('#password').value }),
+        });
+        if (!res.ok) throw new Error('Wrong password');
+        sessionStorage.setItem(PW_KEY, $('#password').value);
+        await unlock();
+      } catch (ex) {
+        err.textContent = ex.message || 'Wrong password';
+        err.hidden = false;
+      } finally {
+        btn.disabled = false; btn.textContent = 'Unlock';
+      }
+    });
+
+    $('#logoutLink').addEventListener('click', (e) => {
+      e.preventDefault();
+      sessionStorage.removeItem(PW_KEY);
+      location.reload();
+    });
+
+    if (sessionStorage.getItem(PW_KEY)) unlock();
+  </script>
+</body>
+</html>
